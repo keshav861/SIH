@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+:root {
+    --pink: #ff046F;
+    --violet: #c63bfa;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+*::selection {
+    background: var(--pink);
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+.heading {
+    font-size: 4rem;
+    color: var(--pink);
+    text-align: center;
+    padding: 0 1rem;
+    padding-top: 6rem;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+}
+.title{
+    padding: 0 1rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 400;
+    color: #aaa343;
+}
+
+body {
+    background: #D9D9D9;
+}
+
+header {
+    width: 96%;
+    background: #333;
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    transition: 0.2s;
+}
+
+.header-active {
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .3);
+}
+
+header .navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+header .navbar ul li {
+    margin: 0 1rem;
+}
+
+header .navbar ul li a {
+    font-size: 2rem;
+    color: var(--pink);
+    transition: 0.2s;
+}
+
+header .navbar ul li button {
+    background-color: rgba(104, 85, 224, 1);
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 600;
+    margin: 0 10px;
+    width: 100px;
+    padding: 10px 0;
+    transition: 0.4s;
+}
+
+header .navbar ul li button:hover {
+    color: white;
+    box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+    background-color: rgba(104, 85, 224, 1);
+}
+
+header .navbar ul li .active,
+header .navbar ul li a:hover {
+    color: var(--violet);
+}
+
+header .logo {
+    font-size: 2.5rem;
+    color: var(--violet);
+    text-transform: uppercase;
+}
+
+header .logo i {
+    color: var(--pink);
+    padding: 0.2rem;
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: var(--pink);
+    cursor: pointer;
+    display: none;
+    transition: 0.2s;
+}
+
+
+.home {
+    min-height: 100vh;
+    background: url(../images/banner-bg\ 1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.home .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-top: 14rem;
+    padding-bottom: 8rem;
+    text-align: center;
+}
+
+.home .content h1 {
+    font-size: 5rem;
+    color: #fff;
+    padding: 0 1rem;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, .3);
+    text-transform: uppercase;
+}
+
+.home .box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.home .box-container .box {
+    height: 20rem;
+    width: 25rem;
+    background: #fff;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .5);
+    margin: 2rem;
+    cursor: pointer;
+}
+
+.home .box-container .box i {
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--violet);
+    font-size: 3rem;
+    margin: 2rem 0;
+    transition: 0.2s;
+}
+
+.home .box-container .box h3 {
+    font-size: 2rem;
+    color: var(--pink);
+    transition: 0.2s;
+}
+
+.home .box-container .box p {
+    font-size: 1.3rem;
+    padding: .7rem 2rem;
+    color: #666;
+}
+
+.home .box-container .box:hover i {
+    background: var(--pink);
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 70vh solid #D9D9D9;
+    width: 120%;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.about .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about .row .image img{
+    height: 70vh;
+    width: 50vw;
+}
+.about .row .content{
+    padding-left: 5rem;
+}
+.about .row .content h3{
+    font-size: 3rem;
+    color: var(--pink);
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color: #999;
+    padding: 1rem 0;
+
+}
+.about .row .content button{
+    height: 3.5rem;
+    width: 17rem;
+    background: var(--violet);
+    color: #fff;
+    border: none;
+    border-radius: 5rem;
+    box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .3);
+    cursor: pointer;
+    font-size: 2rem;
+    transition: 0.2s;
+}
+
+.about .row .content button:hover{
+    letter-spacing: .2rem;
+    opacity: .8;
+}
+
+
+.course .box-container{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 4rem;
+    flex-wrap: wrap;
+}
+.course .box-container .box{
+    height: 18rem;
+    width: 25rem;
+    margin: 3.5rem 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: .3rem .3rem 0 .1rem var(--violet),
+                .5rem .5rem .5rem rgba(0, 0, 0, .3);
+}
+.course .box-container .box i{
+    height: 10rem;
+    width: 10rem;
+    line-height: 8rem;
+    text-align: center;
+    color: #D9D9D9;
+    border-radius: 50%;
+    background: var(--pink);
+    margin-top: -4rem;
+    border: 1rem solid #D9D9D9;
+    border-left: 1rem solid var(--pink);
+    border-right: 1rem solid var(--pink);
+    box-shadow: 0 0 0 1rem #D9D9D9 inset;
+    font-size: 3.5rem;
+}
+.course .box-container .box h3{
+    font-size: 2rem;
+    color: var(--violet);
+}
+
+.course .box-container .box p{
+    font-size: 1.5rem;
+    color: #999;
+    padding: 1rem 0;
+}
+
+
+
+
+header .fa-times {
+    transform: rotate(180deg);
+    color: var(--violet);
+
+}
+
+
+
+/* media query navbar */
+
+@media (max-width:768px) {
+    html {
+        font-size: 55%;
+    }
+
+    header .fa-bars {
+        display: block;
+    }
+
+    header .navbar {
+        position: fixed;
+        top: -100rem;
+        left: 0;
+        width: 100%;
+        background: #333;
+        border-radius: 1rem;
+        opacity: 0;
+        transition: 0.2s linear;
+    }
+
+    header .navbar ul {
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+
+    header .navbar ul li {
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    header .navbar ul li a {
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        display: flex;
+    }
+
+    header .nav-toggle {
+        top: 5.5rem;
+        opacity: 1;
+    }
+
+    .home .content p {
+        padding: 1.5rem 2rem;
+    }
+
+    .home::before {
+        display: none;
+    }
+    .about .row{
+        flex-flow: column-reverse;
+    }
+    .about .row .image img{
+        height: 60vh;
+        width: 90vh;
+    }
+    .about .row .content p{
+        padding: 0 2.5rem;
+    }
+    .about .row .content button{
+        margin-top: 2rem;
+    }
+    .course .box-container{
+        width: 100%;
+    }
+}
