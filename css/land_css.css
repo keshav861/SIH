@@ -380,3 +380,10 @@ header .fa-times {
         width: 100%;
     }
 }
+.quote{
+    font-size: 4rem;
+    color: #b6d8e8;
+    padding: 0 1rem;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
