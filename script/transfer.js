@@ -10,6 +10,6 @@ document..querySelectorAll("input")[3].addEventListener("keypress", function(eve
         document.querySelector("#form").setAttribute("action", "https://www.google.com");
     else if (emailsConsultant.includes(x) && y == "consultant")
         document.querySelector("#form").setAttribute("action", "https://www.bing.com");
-    console.log(x);
-    location.reload(true);
+    else
+        location.reload(true);
 })
