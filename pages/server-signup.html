@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <title> Responsive Registration Form | CodingLab </title>
-    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/server-signup.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
@@ -38,14 +38,43 @@
             <input type="text" placeholder="Confirm your password" required>
           </div>
         </div>
-        
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <input type="radio" name="gender" id="dot-4">
+          <input type="radio" name="gender" id="dot-5">
+          <span class="gender-title">SERVICES</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Advocate</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Document <br> Writter</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Notaries</span>
+            </label>
+          <label for="dot-4">
+            <span class="dot four"></span>
+            <span class="gender">Arbitrators</span>
+            </label>
+          <label for="dot-5">
+            <span class="dot five"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
         
         <div class="button">
           <input type="submit" value="Register">
         </div>
       </form>
       <div class="redirect">
-        <a href="server-signup.html"> Register as Service provider HERE! </a>
+        <!-- <a href="#"> Register as Service provider HERE! </a> -->
       </div>
       
     </div>
