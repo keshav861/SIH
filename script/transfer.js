@@ -7,9 +7,10 @@ document..querySelectorAll("input")[3].addEventListener("keypress", function(eve
         y = (document.forms["form"]["password"].value);
     }
     if (emailsClient.includes(x) && y == "client")
-        document.querySelector("#form").setAttribute("action", "https://www.google.com");
+    {document.querySelector("#form").setAttribute("action", "https://www.google.com");
+     y="";}
     else if (emailsConsultant.includes(x) && y == "consultant")
-        document.querySelector("#form").setAttribute("action", "https://www.bing.com");
-    else
-        location.reload(true);
+    {document.querySelector("#form").setAttribute("action", "https://www.bing.com");
+     y="";
+    }
 })
