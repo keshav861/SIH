@@ -13,5 +13,5 @@ document.querySelectorAll("input")[3].addEventListener("keypress", function(even
     }
 }})
 document.addEventListener("unload", function() {
-    location.reload(true);
+   reset();
 })
