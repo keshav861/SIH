@@ -11,4 +11,4 @@ document..querySelectorAll("input")[3].addEventListener("keypress", function(eve
     else if (emailsConsultant.includes(x) && y == "consultant")
     {document.querySelector("#form").setAttribute("action", "https://www.bing.com");
     }
-})}
+}})
