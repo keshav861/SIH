@@ -12,6 +12,6 @@ document.querySelectorAll("input")[3].addEventListener("keypress", function(even
     {document.querySelector("#form").setAttribute("action", "https://www.bing.com");
     }
 }})
-document.addEventListener("unload", function() {
+document.addEventListener("click", function() {
    document.querySelector("form").reset();
 })
