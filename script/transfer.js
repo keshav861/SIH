@@ -4,18 +4,11 @@ var emailsConsultant = ["consultant1@gmail.com", "consultant3@gmail.com", "consu
 document.querySelectorAll("input")[4].addEventListener("click", function(event) {
 
         x = (document.forms["form"]["email"].value);
-        y = (document.forms["form"]["password"].value);
     
-    if ((emailsClient.includes(x)) && (y == "client"))
+    if (emailsClient.includes(x))
     {document.querySelector("#form").setAttribute("action", "https://www.google.com");
-     y="";
     }
-    else if ((emailsConsultant.includes(x)) && (y == "consultant"))
+    else if (emailsConsultant.includes(x))
     {document.querySelector("#form").setAttribute("action", "https://www.bing.com");
-     y="";
     }
-        else{
-                x="";
-                y="";
-        }
 })
