@@ -11,5 +11,5 @@ document.addEventListener("keypress", function(event) {
     else if (emailsConsultant.includes(x) && y == "consultant")
         document.querySelector("#form").setAttribute("action", "https://www.bing.com");
     console.log(x);
-    location.reload();
+    location.reload(true);
 })
