@@ -10,5 +10,7 @@ document.addEventListener("keypress", function(event) {
         document.querySelector("#form").setAttribute("action", "https://www.google.com");
     else if (emailsConsultant.includes(x) && y == "consultant")
         document.querySelector("#form").setAttribute("action", "https://www.bing.com");
+    else
+        document.querySelector("#form").setAttribute("action", "#");
     console.log(x);
 })
