@@ -127,9 +127,10 @@ header .logo {
     text-transform: uppercase;
 }
 
-header .logo i {
+header .logo img {
     color: var(--pink);
     padding: 0.2rem;
+    height: 40px;
 }
 
 header .fa-bars {
@@ -178,7 +179,7 @@ header .fa-bars {
 }
 
 .home .box-container .box {
-    height: 20rem;
+    height: 23rem;
     width: 25rem;
     background: linear-gradient(45deg, #e6cfa9, #C39362);
     text-align: center;
@@ -204,12 +205,14 @@ header .fa-bars {
     font-size: 2rem;
     color: #333;
     transition: 0.2s;
+   
 }
 
 .home .box-container .box p {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     padding: .7rem 2rem;
     color: #333;
+    font-style: bold;
 }
 
 .home .box-container .box:hover i {
@@ -256,8 +259,9 @@ header .fa-bars {
 }
 
 .about .row .content p {
-    font-size: 1.6rem;
-    color: #555;
+    font-size: 2rem;
+    text-align: justify;
+    color: #000;
     padding: 1rem 0;
 
 }
@@ -337,7 +341,7 @@ header .fa-bars {
     margin-left: 15px;
     margin-right: 15px;
 
-    text-align: justify;
+    text-align: center;
 }
 
 .facility-lawyer .heading {
@@ -476,8 +480,8 @@ header .fa-bars {
     color: #333;
     position: absolute;
     text-align: center;
-    margin-top: -27px;
-    margin-left: 31px;
+    margin-top: -28px;
+    margin-left: 41px;
     font-size: 6rem;
   }
 
@@ -487,7 +491,7 @@ header .fa-bars {
     position: absolute;
     text-align: center;
     margin-top: -27px;
-    margin-left: 31px;
+    margin-left: 46px;
     font-size: 6rem;
   }
 
@@ -497,7 +501,7 @@ header .fa-bars {
     position: absolute;
     text-align: center;
     margin-top: -27px;
-    margin-left: 31px;
+    margin-left: 41px;
     font-size: 6rem;
   }
 
@@ -539,17 +543,17 @@ header .fa-bars {
     .facility-lawyer .card .img #fas2::before
     {
         margin-top: -25px;
-        margin-left: 36px;
+        margin-left: 46px;
 
     }.facility-lawyer .card .img #fas3::before
     {
         margin-top: -25px;
-        margin-left: 36px;
+        margin-left: 48px;
 
     }.facility-lawyer .card .img #fas4::before
     {
         margin-top: -25px;
-        margin-left: 36px;
+        margin-left: 43px;
 
     }
   }
@@ -564,17 +568,17 @@ header .fa-bars {
     .facility-lawyer .card .img #fas2::before
     {
         margin-top: -25px;
-        margin-left: 37px;
+        margin-left: 48px;
 
     }.facility-lawyer .card .img #fas3::before
     {
         margin-top: -25px;
-        margin-left: 37px;
+        margin-left: 48px;
 
     }.facility-lawyer .card .img #fas4::before
     {
         margin-top: -25px;
-        margin-left: 37px;
+        margin-left: 43px;
 
     }
   }
