@@ -8,11 +8,11 @@ document.querySelectorAll("input")[3].addEventListener("keypress", function(even
         y = (document.forms["form"]["password"].value);
     }
     if (emailsClient.includes(x) && y == "client") {
-        document.querySelector("#form").setAttribute("action", "/user_interface/index2.html");
-        location.href = location.href;
+        document.querySelector("#form").setAttribute("action", "https://www.google.com");
+        document.forms.value = "";
     } else if (emailsConsultant.includes(x) && y == "consultant") {
         document.querySelector("#form").setAttribute("action", "https://www.bing.com");
-        location.href = location.href;
+        document.forms.value = "";
     }
     console.log(x);
 })
