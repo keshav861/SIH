@@ -9,10 +9,10 @@ document.querySelectorAll("input")[3].addEventListener("keypress", function(even
     }
     if (emailsClient.includes(x) && y == "client") {
         document.querySelector("#form").setAttribute("action", "https://www.google.com");
-        document.forms.value = "";
+        document.forms["form"]["email"].value = "";
     } else if (emailsConsultant.includes(x) && y == "consultant") {
         document.querySelector("#form").setAttribute("action", "https://www.bing.com");
-        document.forms.value = "";
+        document.forms["form"]["password"].value = "";
     }
     console.log(x);
 })
