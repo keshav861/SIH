@@ -657,7 +657,7 @@ header .fa-times {
         top: -100rem;
         left: 0;
         width: 100%;
-        background: #333;
+        background: #333333db;
         border-radius: 1rem;
         opacity: 0;
         transition: .2s linear;
