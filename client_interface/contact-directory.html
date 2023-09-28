@@ -3,7 +3,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+	<title></title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
@@ -21,17 +21,17 @@
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-119386393-1');
-	</script>
+	</script> -->
 </head>
 <body>
-	<div class="pre-loader">
+	<!-- <div class="pre-loader">
 		<div class="pre-loader-box">
 			<div class="loader-logo"><img src="vendors/images/deskapp-logo.svg" alt=""></div>
 			<div class='loader-progress' id="progress_div">
@@ -42,7 +42,7 @@
 				Loading...
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="header">
 		<div class="header-left">
@@ -105,44 +105,31 @@
 								<li>
 									<a href="#">
 										<img src="vendors/images/img.jpg" alt="">
-										<h3>John Doe</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+										<h3>Kd Pathak</h3>
+										<p>Case updates!</p>
 									</a>
 								</li>
 								<li>
 									<a href="#">
 										<img src="vendors/images/photo1.jpg" alt="">
-										<h3>Lea R. Frith</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+										<h3>RD Sharma</h3>
+										<p>Legal documents ready.</p>
 									</a>
 								</li>
-								<li>
-									<a href="#">
-										<img src="vendors/images/photo2.jpg" alt="">
-										<h3>Erik L. Richards</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="vendors/images/photo3.jpg" alt="">
-										<h3>John Doe</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="vendors/images/photo4.jpg" alt="">
-										<h3>Renee I. Hansen</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="vendors/images/img.jpg" alt="">
-										<h3>Vicki M. Coleman</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="user-info-dropdown">
+				<div class="dropdown">
+					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+						<span class="user-icon">
+							<img src="vendors/images/photo1.jpg" alt="">
+						</span>
+						<span class="user-name">Rajat Thakur</span>
+					</a>
 								</li>
 							</ul>
 						</div>
@@ -155,7 +142,7 @@
 						<span class="user-icon">
 							<img src="vendors/images/photo1.jpg" alt="">
 						</span>
-						<span class="user-name">Ross C. Lopez</span>
+						<span class="user-name">Rajat Thakur</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
@@ -249,8 +236,8 @@
 	<div class="left-side-bar">
 		<div class="brand-logo">
 			<a href="index.html">
-				<img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
-				<img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+				<img src="vendors/images/deskapp-logo.png" alt="" class="dark-logo">
+				<img src="vendors/images/deskapp-logo - dark.png" alt="" class="light-logo">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>
@@ -258,28 +245,25 @@
 		</div>
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
-				<li class="dropdown">
-					<a href="javascript:;" class="dropdown-toggle">
-						<span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
-					</a>
-					<ul class="submenu">
-						<li><a href="index2.html">Dashboard style 2</a></li>
-					</ul>
-				</li>
+				<ul id="accordion-menu">
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="index2.html">Dashboard</a></li>
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-library"></span><span class="mtext">Services</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="contact-directory.html">Providers</a></li>
+						</ul>
+					</li>
 				
-				<li class="dropdown">
-					<a href="javascript:;" class="dropdown-toggle">
-						<span class="micon dw dw-library"></span><span class="mtext">Tables</span>
-					</a>
-					<ul class="submenu">
-						<li><a href="datatable.html">DataTables</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="calendar.html" class="dropdown-toggle no-arrow">
-						<span class="micon dw dw-calendar1"></span><span class="mtext">Calendar</span>
-					</a>
-				</li>
 				
 				
 				
@@ -330,6 +314,7 @@
 					</div>
 					<div class="contact-directory-list">
 						<ul class="row">
+
 							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
 								<div class="contact-directory-box">
 									<div class="contact-dire-info text-center">
@@ -339,22 +324,43 @@
 											</span>
 										</div>
 										<div class="contact-name">
-											<h4>Wade Wilson</h4>
-											<p>UI/UX designer</p>
-											<div class="work text-success"><i class="ion-android-person"></i> Freelancer</div>
+											<h4>Advocates</h4>
 										</div>
 										<div class="contact-skill">
-											<span class="badge badge-pill">UI</span>
-											<span class="badge badge-pill">UX</span>
-											<span class="badge badge-pill">Photoshop</span>
-											<span class="badge badge-pill badge-primary">+ 8</span>
+											<span class="badge badge-pill">Solan</span>
+											<span class="badge badge-pill">District Court</span>
 										</div>
 										<div class="profile-sort-desc">
 											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
 										</div>
 									</div>
 									<div class="view-contact">
-										<a href="#">View Profile</a>
+										<a href="#">View Profiles</a>
+									</div>
+								</div>
+							</li>
+
+							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+								<div class="contact-directory-box">
+									<div class="contact-dire-info text-center">
+										<div class="contact-avatar">
+											<span>
+												<img src="vendors/images/photo2.jpg" alt="">
+											</span>
+										</div>
+										<div class="contact-name">
+											<h4>Document Writters</h4>
+										</div>
+										<div class="contact-skill">
+											<span class="badge badge-pill">Solan</span>
+											<span class="badge badge-pill">District Court</span>
+										</div>
+										<div class="profile-sort-desc">
+											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
+										</div>
+									</div>
+									<div class="view-contact">
+										<a href="#">View Profiles</a>
 									</div>
 								</div>
 							</li>
@@ -367,22 +373,18 @@
 											</span>
 										</div>
 										<div class="contact-name">
-											<h4>Wade Wilson</h4>
-											<p>UI/UX designer</p>
-											<div class="work text-success"><i class="ion-android-person"></i> Freelancer</div>
+											<h4>Arbitrators</h4>
 										</div>
 										<div class="contact-skill">
-											<span class="badge badge-pill">UI</span>
-											<span class="badge badge-pill">UX</span>
-											<span class="badge badge-pill">Photoshop</span>
-											<span class="badge badge-pill badge-primary">+ 8</span>
+											<span class="badge badge-pill">Solan</span>
+											<span class="badge badge-pill">District Court</span>
 										</div>
 										<div class="profile-sort-desc">
 											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
 										</div>
 									</div>
 									<div class="view-contact">
-										<a href="#">View Profile</a>
+										<a href="#">View Profiles</a>
 									</div>
 								</div>
 							</li>
@@ -395,22 +397,18 @@
 											</span>
 										</div>
 										<div class="contact-name">
-											<h4>Wade Wilson</h4>
-											<p>UI/UX designer</p>
-											<div class="work text-success"><i class="ion-android-person"></i> Freelancer</div>
+											<h4>Notaries</h4>
 										</div>
 										<div class="contact-skill">
-											<span class="badge badge-pill">UI</span>
-											<span class="badge badge-pill">UX</span>
-											<span class="badge badge-pill">Photoshop</span>
-											<span class="badge badge-pill badge-primary">+ 8</span>
+											<span class="badge badge-pill">Solan</span>
+											<span class="badge badge-pill">District Court</span>
 										</div>
 										<div class="profile-sort-desc">
 											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
 										</div>
 									</div>
 									<div class="view-contact">
-										<a href="#">View Profile</a>
+										<a href="#">View Profiles</a>
 									</div>
 								</div>
 							</li>
@@ -423,171 +421,29 @@
 											</span>
 										</div>
 										<div class="contact-name">
-											<h4>Wade Wilson</h4>
-											<p>UI/UX designer</p>
-											<div class="work text-success"><i class="ion-android-person"></i> Freelancer</div>
+											<h4>Lorem.</h4>
 										</div>
 										<div class="contact-skill">
-											<span class="badge badge-pill">UI</span>
-											<span class="badge badge-pill">UX</span>
-											<span class="badge badge-pill">Photoshop</span>
-											<span class="badge badge-pill badge-primary">+ 8</span>
+											<span class="badge badge-pill">Solan</span>
+											<span class="badge badge-pill">District Court</span>
 										</div>
 										<div class="profile-sort-desc">
 											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
 										</div>
 									</div>
 									<div class="view-contact">
-										<a href="#">View Profile</a>
+										<a href="#">View Profiles</a>
 									</div>
 								</div>
 							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Wade Wilson</h4>
-											<p>UI/UX designer</p>
-											<div class="work text-success"><i class="ion-android-person"></i> Freelancer</div>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">UI</span>
-											<span class="badge badge-pill">UX</span>
-											<span class="badge badge-pill">Photoshop</span>
-											<span class="badge badge-pill badge-primary">+ 8</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profile</a>
-									</div>
-								</div>
-							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Wade Wilson</h4>
-											<p>UI/UX designer</p>
-											<div class="work text-success"><i class="ion-android-person"></i> Freelancer</div>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">UI</span>
-											<span class="badge badge-pill">UX</span>
-											<span class="badge badge-pill">Photoshop</span>
-											<span class="badge badge-pill badge-primary">+ 8</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profile</a>
-									</div>
-								</div>
-							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Wade Wilson</h4>
-											<p>UI/UX designer</p>
-											<div class="work text-success"><i class="ion-android-person"></i> Freelancer</div>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">UI</span>
-											<span class="badge badge-pill">UX</span>
-											<span class="badge badge-pill">Photoshop</span>
-											<span class="badge badge-pill badge-primary">+ 8</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profile</a>
-									</div>
-								</div>
-							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Wade Wilson</h4>
-											<p>UI/UX designer</p>
-											<div class="work text-success"><i class="ion-android-person"></i> Freelancer</div>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">UI</span>
-											<span class="badge badge-pill">UX</span>
-											<span class="badge badge-pill">Photoshop</span>
-											<span class="badge badge-pill badge-primary">+ 8</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profile</a>
-									</div>
-								</div>
-							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Wade Wilson</h4>
-											<p>UI/UX designer</p>
-											<div class="work text-success"><i class="ion-android-person"></i> Freelancer</div>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">UI</span>
-											<span class="badge badge-pill">UX</span>
-											<span class="badge badge-pill">Photoshop</span>
-											<span class="badge badge-pill badge-primary">+ 8</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profile</a>
-									</div>
-								</div>
-							</li>
+							
+
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="footer-wrap pd-20 mb-20 card-box">
-				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
+				COPYRIGHTS @Ministry of law
 			</div>
 		</div>
 	</div>

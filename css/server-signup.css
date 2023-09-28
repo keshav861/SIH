@@ -70,6 +70,15 @@ form .input-box span.details{
   font-size: 20px;
   font-weight: 500;
  }
+ form .gender-details{
+  width: 120%;
+  position: relative;
+  justify-content: space-between;
+ }
+ .form .gender-details::before{
+  position: absolute;
+
+ }
  form .category{
    display: flex;
    width: 80%;
@@ -85,7 +94,7 @@ form .input-box span.details{
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  margin-right: 10px;
+  /* margin-right: 25px; */
   background: #d9d9d9;
   border: 5px solid transparent;
   transition: all 0.3s ease;
@@ -98,6 +107,7 @@ form .input-box span.details{
  {
    background: #9b59b6;
    border-color: #d9d9d9;
+   /* margin-right: 10px; */
  }
  form input[type="radio"]{
    display: none;
@@ -145,6 +155,10 @@ form .user-details .input-box{
   }
   .user-details::-webkit-scrollbar{
     width: 5px;
+  }
+  form .user-details{
+    width: 90%;
+    padding-left: 2px;
   }
   }
   @media(max-width: 459px){
