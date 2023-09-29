@@ -6,7 +6,7 @@ const __dirname = dirname(fileURLToPath(
     import.meta.url));
 
 const app = express();
-const port = 5500;
+const port = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
