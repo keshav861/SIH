@@ -25,7 +25,7 @@ app.post("/submit", (req, res) => {
     else if (req.body["email"] == "consultant1@gmail.com" && req.body["password"] == "user")
         res.sendFile(__dirname + "/user_interface/index2.html");
     else
-        res.sendFile("./pages/login.html");
+        res.sendFile(__dirname + "/pages/login.html");
 })
 
 app.listen(port, () => {
