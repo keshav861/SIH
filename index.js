@@ -21,7 +21,7 @@ app.get("/pages/login.html", (req, res) => {
 
 app.post("", (req, res) => {
     if (req.body["email"] == "client1@gmail.com" && req.body["password"] == "user")
-        console.log(__dirname);
+        console.log(`${__dirname}`);
     else if (req.body["email"] == "consultant1@gmail.com" && req.body["password"] == "user")
         res.sendFile("../user_interface/index2.html");
     else
