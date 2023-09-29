@@ -21,7 +21,7 @@ app.get("/pages/login.html", (req, res) => {
 
 app.post("/submit", (req, res) => {
     if (req.body["email"] == "client1@gmail.com" && req.body["password"] == "user")
-        res.send("<h1>Clinet login</h1>");
+        res.sendFile("./client_interface/index2.html");
     else if (req.body["email"] == "consultant1@gmail.com" && req.body["password"] == "user")
         res.sendFile("../user_interface/index2.html");
     else
