@@ -11,13 +11,13 @@ const port = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
-// app.get("/", (req, res) => {
-//     res.sendFile(__dirname + "/index.html")
-// })
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html")
+})
 
-// app.get("/pages/login.html", (req, res) => {
-//     res.sendFile(__dirname + "/pages/login.html");
-// })
+app.get("/pages/login.html", (req, res) => {
+    res.sendFile(__dirname + "/pages/login.html");
+})
 
 app.post("/submit", (req, res) => {
     if (req.body["email"] == "client1@gmail.com" && req.body["password"] == "user")
