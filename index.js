@@ -19,7 +19,7 @@ app.get("/pages/login.html", (req, res) => {
     res.sendFile(__dirname + "/pages/login.html");
 })
 
-app.post("", (req, res) => {
+app.post("/submit", (req, res) => {
     if (req.body["email"] == "client1@gmail.com" && req.body["password"] == "user")
         console.log(`${__dirname}`);
     else if (req.body["email"] == "consultant1@gmail.com" && req.body["password"] == "user")
