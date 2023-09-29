@@ -19,9 +19,9 @@ app.get("/pages/login.html", (req, res) => {
     res.sendFile(__dirname + "/pages/login.html");
 })
 
-app.post("/submit", (req, res) => {
+app.post("#", (req, res) => {
     if (req.body["email"] == "client1@gmail.com" && req.body["password"] == "user")
-        res.sendFile("/index.html");
+        console.log(__dirname);
     else if (req.body["email"] == "consultant1@gmail.com" && req.body["password"] == "user")
         res.sendFile("../user_interface/index2.html");
     else
