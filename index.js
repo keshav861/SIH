@@ -7,6 +7,9 @@ const __dirname = dirname(fileURLToPath(
 
 const app = express();
 const port = process.env.PORT;
+// const port = 5500;
+
+//change it when runjning on git
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
