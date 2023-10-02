@@ -1863,6 +1863,9 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     right: 15px;
     font-size: 18px
 }
+.sidebar-menu #dropdown-not:after {
+    font-size: 0;
+}
 
 .sidebar-menu.icon-style-2 .dropdown-toggle:after {
     content: "\f217";
