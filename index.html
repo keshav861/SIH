@@ -262,6 +262,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/script/land_js.js"></script>
     <script src="index.js"></script>
+    <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "a1efb0de-f967-4437-b698-df4f07868f83",
+        apiHost: "https://sih-flowise.onrender.com",
+    })
+</script>
 </body>
 
 </html>
