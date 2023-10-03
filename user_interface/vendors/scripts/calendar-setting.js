@@ -131,6 +131,15 @@ jQuery(document).ready(function(){
 				className: 'fc-bg-blue',
 				icon : "medkit",
 				allDay: false
+			},
+			{
+				title: 'Dentist',
+				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu pellentesque nibh. In nisl nulla, convallis ac nulla eget, pellentesque pellentesque magna.',
+				start: '2023-10-05T11:30:00',
+				end: '2023-10-10T012:30:00',
+				className: 'fc-bg-blue',
+				icon : "medkit",
+				allDay: false
 			}
 			],
 			dayClick: function() {
