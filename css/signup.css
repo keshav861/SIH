@@ -11,7 +11,7 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: #fff;
 }
 .container{
   max-width: 700px;
@@ -19,7 +19,8 @@ body{
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15),
+              1px 4px 15px rgba(0,0,0,0.5);
 }
 .container .title{
   font-size: 25px;
@@ -34,7 +35,8 @@ body{
   height: 3px;
   width: 30px;
   border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: -webkit-linear-gradient(left,#003366,#004080,#0059b3
+  , #0073e6);
 }
 .content form .user-details{
   display: flex;
@@ -64,7 +66,7 @@ form .input-box span.details{
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: #9b59b6;
+  border-color: #004080;
 }
  form .gender-details .gender-title{
   font-size: 20px;
@@ -96,7 +98,8 @@ form .input-box span.details{
  #dot-4:checked ~ .category label .four,
  #dot-5:checked ~ .category label .five
  {
-   background: #9b59b6;
+   background: -webkit-linear-gradient(left,#003366,#004080,#0059b3
+   , #0073e6);
    border-color: #d9d9d9;
  }
  form input[type="radio"]{
@@ -117,16 +120,27 @@ form .input-box span.details{
    letter-spacing: 1px;
    cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+   background: -webkit-linear-gradient(left,#003366,#004080,#0059b3
+   , #0073e6);
+   
  }
  form .button input:hover{
   /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  background: -webkit-linear-gradient(135deg,#003366,#004080,#0059b3
+  , #0073e6);
   }
 
-  .resirect{
+  .redirect a{
        margin-top: 1px;
+       color: #000;
+       text-decoration: none;
   }
+  .redirect a:hover{
+
+    color: -webkit-linear-gradient(left,#003366,#004080,#0059b3
+    , #0073e6);
+
+}
 
  @media(max-width: 584px){
  .container{

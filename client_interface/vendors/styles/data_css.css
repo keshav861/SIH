@@ -1,0 +1,73 @@
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+    border-radius: 8px;
+    max-width: 80%;
+    min-width: 300px;
+    width: auto;
+    max-height: 90vh;
+    min-height: 100px;
+    height: auto;
+    overflow-y: auto;
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+.popup.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#bookingButton {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-overlay {
+    animation: fadeIn 0.3s forwards;
+}
+
+.popup {
+    animation: fadeIn 0.3s forwards;
+}
+
+.popup-overlay.hide {
+    animation: fadeOut 0.3s forwards;
+    display: none;
+}
+
+.popup.hide {
+    animation: fadeOut 0.3s forwards;
+    display: none;
+}
