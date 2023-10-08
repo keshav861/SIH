@@ -8051,8 +8051,12 @@ y-axis
   left: auto;
   top: 0;
   right: 0;
-  bottom: 0; }
+  bottom: 0;
+}
 
+  .mCSB_draggerContainer {
+    margin-left: 13px;
+}
 .mCSB_outside + .mCSB_scrollTools {
   right: -26px; }
 
