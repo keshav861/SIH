@@ -6,8 +6,8 @@ const __dirname = dirname(fileURLToPath(
     import.meta.url));
 
 const app = express();
-// const port = process.env.PORT;
-const port = 5500;
+const port = process.env.PORT;
+// const port = 5500;
 
 //change it when runjning on git
 
