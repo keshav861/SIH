@@ -710,6 +710,7 @@ header .fa-times {
 
     .about .row .content p {
         padding: 0 2.5rem;
+        margin-left: -50px;
     }
 
     .about .row .content button {
