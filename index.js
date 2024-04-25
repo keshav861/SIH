@@ -17,11 +17,7 @@ const port = process.env.PORT || 5500;
 
 
 
-const server = http.createServer(app);
 
-server.listen(3000, () => {
-    console.log(`Listening on port 3000`)
-})
 
 mongoose.connect("mongodb://localhost:27017/legal-easy", { useNewUrlParser: true });
 
@@ -130,7 +126,13 @@ app.listen(port, () => {
     console.log(`${port}`);
 })
 
-// Socket 
+
+const server = http.createServer(app);
+
+server.listen(3000, () => {
+    console.log(`Listening on port 3000`)
+})
+
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
