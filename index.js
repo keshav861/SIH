@@ -1,17 +1,29 @@
 // import nodemailer from 'nodemailer';
 import express from "express";
+<<<<<<< Updated upstream
+// import serverless from 'serverless-http;
+=======
 import http from "http";
 import socketIO from "socket.io";
+>>>>>>> Stashed changes
 import bodyParser from "body-parser";
 import { dirname } from "path";
 import { fileURLToPath } from "url"
 import mongoose from "mongoose"
 const __dirname = dirname(fileURLToPath(
+<<<<<<< Updated upstream
   import.meta.url));
+=======
+    import.meta.url));
+    
+// const http = require('http').createServer(app)
+
+>>>>>>> Stashed changes
 
 const app = express();
 const port = process.env.PORT || 5500;
 
+<<<<<<< Updated upstream
 mongoose.connect("mongodb://127.0.0.1:27017/legal-easy", { useNewUrlParser: true });
 
 const personSchema = new mongoose.Schema({
@@ -50,12 +62,12 @@ const serverSchema = new mongoose.Schema({
 const Person = mongoose.model("Person", personSchema);
 
 const Server = mongoose.model("Server", serverSchema);
-
+=======
 const server = http.createServer(app);
 server.listen(3000, () => {
     console.log(`Listening on port 3000`)
 })
-
+>>>>>>> Stashed changes
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -123,6 +135,8 @@ app.post("/server-signup", async(req, res) => {
 
 app.listen(port, () => {
     console.log(`${port}`);
+<<<<<<< Updated upstream
+=======
 })
 // Socket 
 // app.use(express.static(__dirname + '/public'))
@@ -139,4 +153,5 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('message', msg)
     })
 
+>>>>>>> Stashed changes
 })
