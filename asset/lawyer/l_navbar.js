@@ -86,6 +86,7 @@ class l_Navbar extends HTMLElement {
 						<a class="dropdown-item" href="/user_interface/profile.html"><i class="dw dw-settings2"></i> Setting</a> -->
 						<!-- <a class="dropdown-item" href="/user_interface/faq.html"><i class="dw dw-help"></i> Help</a> -->
 						<a class="dropdown-item" href="/pages/login.html"><i class="dw dw-logout"></i> Log Out</a>
+						<a class="dropdown-item" href="/user_interface/subsmodel/index.html"><i class="dw dw-money"></i>Ultimate</a>
 					</div>
 				</div>
 			</div>
@@ -227,6 +228,11 @@ class l_Navbar extends HTMLElement {
 					<li>
 						<a href="/user_interface/chat.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-chat3"></span><span class="mtext">Chat</span>
+						</a>
+					</li>
+					<li>
+						<a href="/user_interface/subsmodel/index.html" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-calendar1"></span><span class="mtext">Subscription</span>
 						</a>
 					</li>
 					<!-- <li>
