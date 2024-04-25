@@ -18,6 +18,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
 		rel="stylesheet">
 	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/icon-font.min.css">
@@ -95,7 +97,7 @@
 						</a>
 						<ul class="submenu">
 							<li><a href="#">Video Player</a></li>
-							 <!-- <li><a href="/client_interface/forgot-password.html">Forgot Password</a></li> -->
+							<!-- <li><a href="/client_interface/forgot-password.html">Forgot Password</a></li> -->
 							<li><a href="/client_interface/reset-password.html">Reset Password</a></li>
 						</ul>
 					</li>
@@ -125,6 +127,28 @@
 								<div class="title">
 									<h4>Advocates</h4>
 								</div>
+								<a href=""><div class="filter"><i class='bx bx-filter'></i></a>
+									<style>
+										.filter {
+											display: flex;
+											position: absolute;
+											font-size: 1.5rem;
+											height: 100px;
+											width: 100px;
+											top: 15px;
+											right: 0;
+											cursor: pointer;
+
+										}
+										@media (max-width: 768px){
+											.filter{
+												height: 50px;
+												width: 50px;
+											}
+										}
+									</style>
+								</div>
+
 								<nav aria-label="breadcrumb" role="navigation">
 									<ol class="breadcrumb">
 										<li class="breadcrumb-item"><a href="/client_interface/index2.html">Home</a>
