@@ -92,9 +92,9 @@
         <div class="header-right">
             <div class="dashboard-setting user-notification">
                 <div class="dropdown">
-                    <a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
+                    <!-- <a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
                         <i class="dw dw-settings2"></i>
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <div class="user-notification">
@@ -326,6 +326,27 @@
                         </nav>
                     </div>
                     <div class="col-md-6 col-sm-12 text-right">
+                        <div class="upload-file">
+                            <button class="upload-button">
+                                <i class="fa fa-plus"></i>
+                              </button>
+                        </div>
+                        <style>
+                            .upload-file{
+                                display: flex;
+                                position: absolute;
+                                top: 9px;
+                                right: 220px;
+                                cursor: pointer;
+                                z-index: 999;
+                            }
+                            .upload-button{
+                                border: none;
+                                background-color: transparent;
+                                cursor: pointer;
+                                z-index: 999;
+                                }
+                        </style>
                         <div class="dropdown">
                             <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                                 September 2023

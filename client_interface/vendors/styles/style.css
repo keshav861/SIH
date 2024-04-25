@@ -18,7 +18,7 @@ html {
 }
 
 input[type=submit] {
-    -webkit-appearance: none
+    -webkit-appearance: none;
 }
 
 *,
@@ -37,7 +37,7 @@ body {
     font-weight: 400;
     min-height: 100%;
     color: #031e23;
-    background: #ecf0f4
+    background: #FFF8E1;
 }
 
 a {
@@ -1432,7 +1432,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     position: fixed;
     height: 70px;
     width: calc(100% - 280px);
-    background: #fff;
+    background: #F7EAD4;
     right: 0;
     top: 0;
     z-index: 123;
@@ -2063,7 +2063,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 }
 
 .sidebar-light .left-side-bar {
-    background: #fff
+    background: #F7EAD4;
 }
 
 .sidebar-light .sidebar-menu .dropdown-toggle,
