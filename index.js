@@ -9,7 +9,7 @@ const __dirname = dirname(fileURLToPath(
   import.meta.url));
 
 const app = express();
-const port = 5500 || process.env.PORT;
+const port = process.env.PORT || 5500;
 
 mongoose.connect("mongodb://127.0.0.1:27017/legal-easy", { useNewUrlParser: true });
 
