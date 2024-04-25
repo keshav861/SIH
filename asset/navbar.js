@@ -12,6 +12,7 @@ class Navbar extends HTMLElement{
                 <li><a href="#about">about</a></li>
                 <li><a href="/pages/section.html">Section</a></li>
                 <li><a href="#facility">Facility</a></li>
+                <li><a href="/comunity.html">Community</a></li>
                  <a href="./pages/login.html"> 
                     <li><button class="log">Login</button>
                </a> 

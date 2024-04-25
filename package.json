@@ -4,7 +4,8 @@
     "express": "^4.19.2",
     "mongoose": "^8.3.2",
     "nodemailer": "^6.9.13",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "socket.io": "^2.3.0"
   },
   "name": "site",
   "description": "website for SIH(ministry of law ) link of website: https://lucky-croissant-030f5e.netlify.app/",
@@ -12,7 +13,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server",
+    "serve": "node server"
   },
   "author": "",
   "license": "ISC",

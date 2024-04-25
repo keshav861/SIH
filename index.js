@@ -1,7 +1,11 @@
 // import nodemailer from 'nodemailer';
 import express from "express";
 // import serverless from 'serverless-http;
+
+// const http = require('http').createServer(app)
+import http from "http";
 import bodyParser from "body-parser";
+import socketIO from "socket.io";
 import { dirname } from "path";
 import { fileURLToPath } from "url"
 import mongoose from "mongoose"
@@ -11,7 +15,15 @@ const __dirname = dirname(fileURLToPath(
 const app = express();
 const port = process.env.PORT || 5500;
 
-mongoose.connect("mongodb://127.0.0.1:27017/legal-easy", { useNewUrlParser: true });
+
+
+const server = http.createServer(app);
+
+server.listen(3000, () => {
+    console.log(`Listening on port 3000`)
+})
+
+mongoose.connect("mongodb://localhost:27017/legal-easy", { useNewUrlParser: true });
 
 const personSchema = new mongoose.Schema({
     name: String,
@@ -116,4 +128,15 @@ app.post("/server-signup", async(req, res) => {
 
 app.listen(port, () => {
     console.log(`${port}`);
+})
+
+// Socket 
+const io = socketIO(server);
+
+io.on('connection', (socket) => {
+    console.log('Connected...')
+    socket.on('message', (msg) => {
+        socket.broadcast.emit('message', msg)
+    })
+
 })
