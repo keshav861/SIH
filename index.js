@@ -10,14 +10,10 @@ import { dirname } from "path";
 import { fileURLToPath } from "url"
 import mongoose from "mongoose"
 const __dirname = dirname(fileURLToPath(
-  import.meta.url));
+    import.meta.url));
 
 const app = express();
 const port = process.env.PORT || 5500;
-
-
-
-
 
 mongoose.connect("mongodb://localhost:27017/legal-easy", { useNewUrlParser: true });
 
@@ -27,12 +23,13 @@ const personSchema = new mongoose.Schema({
     email: {
         type: String,
         unique: true,
-      },
+        required: true,
+    },
     number: {
         type: Number,
         unique: true,
         required: true,
-      },
+    },
 });
 
 const serverSchema = new mongoose.Schema({
@@ -41,39 +38,43 @@ const serverSchema = new mongoose.Schema({
     email: {
         type: String,
         unique: true,
-      },
+        required: true,
+    },
     brnumber: {
         type: String,
         unique: true,
         required: true,
-      },
-      number: {
+    },
+    number: {
         type: Number,
         unique: true,
         required: true,
-      },
+    },
 });
 
 const Person = mongoose.model("Person", personSchema);
 
 const Server = mongoose.model("Server", serverSchema);
 
+let person;
+let provider;
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 
-app.post("/login", async(req, res) => {
-    const person = await Person.findOne({ number: req.body["number"] }).exec();
-    const server = await Server.findOne({ number: req.body["number"] }).exec();
+app.post("/login", async (req, res) => {
+    person = await Person.findOne({ number: req.body["number"] }).exec();
+    provider = await Server.findOne({ number: req.body["number"] }).exec();
 
     if (person) {
         if (req.body["password"] === person.password)
             res.sendFile(__dirname + "/client_interface/index2.html");
         else
             res.sendFile(__dirname + "/pages/login.html");
-    } else if (server) {
-        if (req.body["password"] === server.password)
+    } else if (provider) {
+        if (req.body["password"] === provider.password)
             res.sendFile(__dirname + "/user_interface/index2.html");
         else
             res.sendFile(__dirname + "/pages/login.html");
@@ -82,28 +83,30 @@ app.post("/login", async(req, res) => {
 })
 
 
-app.post("/signup", async(req, res) => {
+
+app.post("/signup", async (req, res) => {
     const existing = await Person.findOne({ number: req.body["number"] }).exec();
     if (existing) {
         res.send("User Exists");
     } else {
+
         Person.create({
             name: req.body["name"],
             password: req.body["password"],
             email: req.body["email"],
             number: req.body["number"]
-        }).then((data) => {});
+        }).then((data) => { });
         if (req.body["password"] === req.body["conf_password"]) {
             res.sendFile(__dirname + "/client_interface/index2.html");
         }
-        else{
+        else {
             res.send("Passwords Don't Match");
         }
     }
 })
 
 
-app.post("/server-signup", async(req, res) => {
+app.post("/server-signup", async (req, res) => {
     const existing = await Server.findOne({ number: req.body["number"] }).exec();
     if (existing) {
         res.send("Service Provider Exists");
@@ -114,11 +117,26 @@ app.post("/server-signup", async(req, res) => {
             email: req.body["email"],
             number: req.body["number"],
             brnumber: req.body["brnumber"]
-        }).then((data) => {});
+        }).then((data) => { });
         if (req.body["password"] == req.body["conf_password"]) {
             res.sendFile(__dirname + "/user_interface/index2.html");
         }
     }
+})
+
+
+app.post("/reset", async (req, res) => {
+    if (req.body["password"] === req.body["conf_password"]) {
+        if (person) {
+            await Person.updateOne({email: person.email},{password: req.body["password"]});
+        }
+        // res.send(`${person}`);
+        else if (provider) {
+            await Server.updateOne({email: provider.email},{password: req.body["password"]});
+        }
+        res.sendFile(__dirname + "/pages/login.html");
+    }
+    // res.send(`${provider}`);
 })
 
 
@@ -142,3 +160,6 @@ io.on('connection', (socket) => {
     })
 
 })
+
+console.log(`${person}`);
+console.log(`${provider}`);
