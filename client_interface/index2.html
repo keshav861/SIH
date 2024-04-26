@@ -359,50 +359,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row clearfix progress-box">
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-                    <div class="card-box pd-30 height-100-p">
-                        <div class="progress-box text-center">
-                            <input type="text" class="knob dial1" value="5" data-width="120" data-height="120"
-                                data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#1b00ff"
-                                data-angleOffset="180" readonly>
-                            <h5 class="text-blue padding-top-10 h5">total no of Services used</h5>
-                            <span class="d-block">5 <i class="fa fa-line-chart text-blue"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-                    <div class="card-box pd-30 height-100-p">
-                        <div class="progress-box text-center">
-                            <input type="text" class="knob dial2" value="75" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#00e091" data-angleOffset="180" readonly>
-                            <h5 class="text-light-green padding-top-10 h5">Total Expenditure</h5>
-                            <span class="d-block">75 <i class="fa text-light-green fa-line-chart"></i></span>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-                    <div class="card-box pd-30 height-100-p">
-                        <div class="progress-box text-center">
-                            <input type="text" class="knob dial3" value="90" data-width="120" data-height="120"
-                                data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#f56767"
-                                data-angleOffset="180" readonly>
-                            <h5 class="text-light-orange padding-top-10 h5">Total Cases</h5>
-                            <span class="d-block">90 <i class="fa text-light-orange fa-line-chart"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-                    <div class="card-box pd-30 height-100-p">
-                        <div class="progress-box text-center">
-                            <input type="text" class="knob dial4" value="65" data-width="120" data-height="120"
-                                data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb"
-                                data-angleOffset="180" readonly>
-                            <h5 class="text-light-purple padding-top-10 h5">Pending Meetings</h5>
-                            <span class="d-block">65 <i class="fa text-light-purple fa-line-chart-down"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="row">
                 <div class="title" style="margin-left: 17px; margin-bottom: 20px;">
                     <h4>Documents</h4>
@@ -414,7 +371,7 @@
                         <div class="progress-box text-center">
                             <div class="card-content">
                                 <i class="fa fa-file-pdf fa-5x"></i>
-                                <div class="dropdown-menu" style="">
+                                <div class="dropdown-menu">
                                     <a href="#" class="show-file">Show File</a>
                                     <a href="#" class="download-file" download="${file.name}">Download File</a>
                                 </div>
@@ -545,66 +502,99 @@
                 }
             </script>
 
+            <div class="contact-directory-list">
+                <div class="pd-ltr-20 xs-pd-20-10">
+                    <div class="min-height-200px">
+                        <div class="container pd-0">
+                            <div class="page-header">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div id="feedback">
+                                            <h2>Feedback</h2>
+                                            <div class="service-info">
+                                                <p><strong>Service Taken:</strong> Consultant</p>
+                                                <p><strong>Service Provider Name:</strong> K.D. Pathak</p>
+                                            </div>
+                                            <form id="feedbackForm">
+                                                <div class="form-group">
+                                                    <label for="rating">Rating:</label>
+                                                    <select class="form-control" id="rating" name="rating">
+                                                        <option value="5">5 - Excellent</option>
+                                                        <option value="4">4 - Very Good</option>
+                                                        <option value="3">3 - Good</option>
+                                                        <option value="2">2 - Fair</option>
+                                                        <option value="1">1 - Poor</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="comment">Comment:</label>
+                                                    <textarea class="form-control" id="comment" name="comment"
+                                                        rows="3"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                /* Add CSS styles for the form */
+                .service-info {
+                    background-color: #f2f2f2;
+                    padding: 10px;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                }
 
-            <!--<div class="row">
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 pt-10 height-100-p">
-						<h2 class="mb-30 h4">Browser Visit</h2>
-						<div class="browser-visits">
-							<ul>
-								<li class="d-flex flex-wrap align-items-center">
-									<div class="icon"><img src="vendors/images/chrome.png" alt=""></div>
-									<div class="browser-name">Google Chrome</div>
-									<div class="visit"><span class="badge badge-pill badge-primary">50%</span></div>
-								</li>
-								<li class="d-flex flex-wrap align-items-center">
-									<div class="icon"><img src="vendors/images/firefox.png" alt=""></div>
-									<div class="browser-name">Mozilla Firefox</div>
-									<div class="visit"><span class="badge badge-pill badge-secondary">40%</span></div>
-								</li>
-								<li class="d-flex flex-wrap align-items-center">
-									<div class="icon"><img src="vendors/images/safari.png" alt=""></div>
-									<div class="browser-name">Safari</div>
-									<div class="visit"><span class="badge badge-pill badge-success">40%</span></div>
-								</li>
-								<li class="d-flex flex-wrap align-items-center">
-									<div class="icon"><img src="vendors/images/edge.png" alt=""></div>
-									<div class="browser-name">Microsoft Edge</div>
-									<div class="visit"><span class="badge badge-pill badge-warning">20%</span></div>
-								</li>
-								<li class="d-flex flex-wrap align-items-center">
-									<div class="icon"><img src="vendors/images/opera.png" alt=""></div>
-									<div class="browser-name">Opera Mini</div>
-									<div class="visit"><span class="badge badge-pill badge-info">20%</span></div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-8 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 pt-10 height-100-p">
-						<h2 class="mb-30 h4">World Map</h2>
-						<div id="browservisit" style="width:100%!important; height:380px"></div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-7 col-md-12 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<h4 class="mb-30 h4">Compliance Trend</h4>
-						<div id="compliance-trend" class="compliance-trend"></div>
-					</div>
-				</div>
-				<div class="col-lg-5 col-md-12 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<h4 class="mb-30 h4">Records</h4>
-						<div id="chart" class="chart"></div>
-					</div>
-				</div>
-			</div> -->
-            <!-- <div class="footer-wrap pd-20 mb-20 card-box">
-				helloa href="https://github.com/dropways" target="_blank">Keshav maheshwari</a>
-			</div> -->
+                .service-info p {
+                    margin: 5px 0;
+                }
+
+                #feedbackForm {
+                    background-color: #f9f9f9;
+                    padding: 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+
+                #feedbackForm .form-group {
+                    margin-bottom: 20px;
+                }
+
+                #feedbackForm label {
+                    font-weight: bold;
+                }
+
+                #feedbackForm textarea {
+                    resize: vertical;
+                }
+            </style>
+
+
+            <script>
+                document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+                    event.preventDefault(); // Prevent form submission
+
+                    var formData = new FormData(this);
+
+                    var feedbackData = {};
+                    formData.forEach(function (value, key) {
+                        feedbackData[key] = value;
+                    });
+
+                    console.log(feedbackData);
+
+                    this.reset();
+                });
+            </script>
+
+            <div class="footer-wrap pd-20 mb-20 card-box">
+            </div>
         </div>
     </div>
     <!-- js -->
