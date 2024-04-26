@@ -409,7 +409,21 @@
                 </div>
             </div>
             <div id="documentCardContainer" class="row clearfix">
-                <!-- Newly added document card will be appended here -->
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-30 document-card">
+                    <div class="card-box pd-30 height-100-p">
+                        <div class="progress-box text-center">
+                            <div class="card-content">
+                                <i class="fa fa-file-pdf fa-5x"></i>
+                                <div class="dropdown-menu" style="">
+                                    <a href="#" class="show-file">Show File</a>
+                                    <a href="#" class="download-file" download="${file.name}">Download File</a>
+                                </div>
+                                <h5 class="text-light-purple h5">Document 1</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Newly added document card will be appended here -->
+                </div>
             </div>
             <style>
                 .dropdown-menu {
@@ -466,7 +480,7 @@
                     if (fileType.includes('pdf')) {
                         filePreview = '<i class="fa fa-file-pdf fa-5x"></i>';
                     } else if (fileType.startsWith('image')) {
-                        filePreview = `<img src="${URL.createObjectURL(file)}" class="card-preview" alt="Preview">`;
+                        filePreview = `<i class="fa-solid fa-image fa-5x"></i>`;
                     } else if (fileType.includes('word')) {
                         filePreview = '<i class="fa fa-file-word fa-5x"></i>';
                     } else if (fileType.includes('excel')) {
