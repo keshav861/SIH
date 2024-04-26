@@ -4,6 +4,7 @@ import express from "express";
 
 // const http = require('http').createServer(app)
 import http from "http";
+import session from "express-session";
 import bodyParser from "body-parser";
 import socketIO from "socket.io";
 import { dirname } from "path";
@@ -62,7 +63,15 @@ let provider;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
-
+app.use(session({
+  secret: 'your_secret_key',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use((req, res, next) => {
+    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    next();
+  });
 
 
 
@@ -87,16 +96,20 @@ app.post("/login", async (req, res) => {
     console.log("login - "+`${provider}`);
 })
 
+app.get('/login', async (req, res) => {
+    res.sendFile(__dirname + "/pages/login.html");
+})
 
-// app.get('/log-out', async(req,res)=>{
-//     person = "";
-//     provider = "";
-//     console.log("log-out - "+`${person}`);
-//     console.log("log-out - "+`${provider}`);
-//     res.render(__dirname + "/pages/login.html");
-    
-// })
-
+app.get('/log-out', (req, res) => {
+    person = null;
+    provider = null;
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Error destroying session:', err);
+        }
+        res.redirect('/login');
+    });
+});
 
 app.post("/signup", async (req, res) => {
     const existing = await Person.findOne({ number: req.body["number"] }).exec();
