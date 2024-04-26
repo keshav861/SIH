@@ -3,9 +3,20 @@
 
 <head>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>log-in</title>
+    <title>Login</title>
+    <style>
+        .toggle-password {
+            position: absolute;
+            /* right: 10px; */
+            margin-top: 25px;
+            margin-left: -25px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,8 +40,9 @@
                     <div class="field">
                         <input type="text" placeholder="Phone Number" name="number" required id="mail" />
                     </div>
-                    <div class="field">
-                        <input type="password" placeholder="Password" name="password" required />
+                    <div class="field">                 
+                        <input type="password" placeholder="Password" name="password" required id="password" />
+                        <span class="toggle-password" onclick="togglePasswordVisibility()"><i class='bx bx-hide'></i></span> 
                     </div>
                     <div class="pass-link"><a href="#">Forgot password?</a></div>
                     <div class="field btn">
@@ -57,6 +69,23 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var eyeIcon = document.querySelector(".toggle-password i");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.classList.remove('bx-hide');
+                eyeIcon.classList.add('bx-show');
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.classList.remove('bx-show');
+                eyeIcon.classList.add('bx-hide');
+            }
+        }
+    </script>
 
 </body>
 

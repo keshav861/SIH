@@ -45,6 +45,7 @@ body{
   margin: 20px 0 12px 0;
 }
 form .user-details .input-box{
+  position: relative;
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
@@ -150,10 +151,24 @@ form .input-box span.details{
  , #0073e6);
 
 }
+.toggle-password {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: -25px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 
  @media(max-width: 584px){
  .container{
   max-width: 100%;
+}
+.toggle-password {
+  margin-left: -25px;
+}
+
+.toggle-password i {
+  font-size: 20px;
 }
 form .user-details .input-box{
     margin-bottom: 15px;

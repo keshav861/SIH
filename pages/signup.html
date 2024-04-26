@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="../css/signup.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="../css/signup.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+
+</head>
+
 <body>
   <div class="container">
     <div class="title">Registration</div>
@@ -27,15 +30,35 @@
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="password" placeholder="Enter your password" name="password" required>
+            <input type="password" placeholder="Enter your password" id="password" name="password" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility('password', 'eye-icon')"><i
+                class='bx bx-hide' id="eye-icon"></i></span>
           </div>
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="password" placeholder="Confirm your password" name="conf_password" required>
+            <input type="password" placeholder="Confirm your password" id="conf_password" name="conf_password" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility('conf_password', 'conf-eye-icon')"><i
+                class='bx bx-hide' id="conf-eye-icon"></i></span>
           </div>
+
         </div>
-        
-        
+        <script>
+          function togglePasswordVisibility(inputId, iconId) {
+            var passwordInput = document.getElementById(inputId);
+            var eyeIcon = document.getElementById(iconId);
+
+            if (passwordInput.type === "password") {
+              passwordInput.type = "text";
+              eyeIcon.classList.remove('bx-hide');
+              eyeIcon.classList.add('bx-show');
+            } else {
+              passwordInput.type = "password";
+              eyeIcon.classList.remove('bx-show');
+              eyeIcon.classList.add('bx-hide');
+            }
+          }
+        </script>
+
         <div class="button">
           <input type="submit" value="Register">
         </div>
@@ -43,9 +66,11 @@
       <div class="redirect">
         <a href="/pages/server-signup.html"> Register as Service provider HERE! </a>
       </div>
-      
+
     </div>
   </div>
 
+
 </body>
+
 </html>
