@@ -37,7 +37,7 @@ body {
     font-weight: 400;
     min-height: 100%;
     color: #031e23;
-    background: #FFF8E1;
+    background: #ecf0f4;
 }
 
 a {
@@ -1432,7 +1432,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     position: fixed;
     height: 70px;
     width: calc(100% - 280px);
-    background: #F7EAD4;
+    background: #fff;
     right: 0;
     top: 0;
     z-index: 123;
@@ -1807,11 +1807,11 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     width: 280px;
     height: 100vh;
     z-index: 1000;
-    background: #0b132b
+    background: #fff;
 }
 
 .left-side-bar .mCS-dark-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    background: #ecf0f4
+    background: #ecf0f4;
 }
 
 .left-side-bar:before {
@@ -1849,7 +1849,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     display: block;
     padding: 18px 15px 18px 67px;
     font-size: 16px;
-    color: #fff;
+    color: #000;
     font-weight: 300;
     letter-spacing: .03em;
     position: relative;
@@ -1887,7 +1887,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 .sidebar-menu .dropdown-toggle:hover,
 .sidebar-menu .show>.dropdown-toggle {
     background: rgba(0, 0, 0, .4);
-    color: #fff
+    color: #000;
 }
 
 .sidebar-menu .dropdown-toggle .micon {
@@ -1905,7 +1905,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    color: #fff;
+    color: #000;
     background-color: transparent;
     top: 50%;
     text-align: center;
@@ -1919,7 +1919,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 .sidebar-light .sidebar-menu>ul>li>.dropdown-toggle.active .micon,
 .sidebar-menu .dropdown-toggle:hover .micon,
 .sidebar-menu .show>.dropdown-toggle .micon {
-    color: #fff
+    color: #000
 }
 
 .sidebar-menu .dropdown-toggle .new {
@@ -1998,7 +1998,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     display: block;
     padding: 18px 15px 18px 60px;
     font-size: 14px;
-    color: #fff;
+    color: #000;
     font-weight: 300;
     letter-spacing: .03em;
     position: relative;
@@ -2063,7 +2063,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 }
 
 .sidebar-light .left-side-bar {
-    background: #F7EAD4;
+    background: #fff;
 }
 
 .sidebar-light .sidebar-menu .dropdown-toggle,

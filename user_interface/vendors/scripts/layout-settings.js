@@ -7,7 +7,7 @@
 			headerBackground: "header-white",
 			navigationBackground: "sidebar-dark",
 			menuDropdownIcon: 'icon-style-1',
-			menuListIcon: 'icon-list-style-1',
+			menuListIcon: 'icon-list-style-5',
 		}
 
 		/**
