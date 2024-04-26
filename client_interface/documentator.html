@@ -19,8 +19,12 @@
 		rel="stylesheet">
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/core.css">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/icon-font.min.css">
 	<link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/style.css">
+	<link rel="stylesheet" href="/client_interface/vendors/styles/data_css.css">
+
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -59,13 +63,34 @@
 						<div class="row">
 							<div class="col-md-12 col-sm-12">
 								<div class="title">
-									<h4>Documentators</h4>
+									<h4>Documentation</h4>
+								</div>
+								<a href=""><div class="filter"><i class='bx bx-filter'></i></a>
+									<style>
+										.filter {
+											display: flex;
+											position: absolute;
+											font-size: 1.5rem;
+											height: 100px;
+											width: 100px;
+											top: 15px;
+											right: 0;
+											cursor: pointer;
+
+										}
+										@media (max-width: 768px){
+											.filter{
+												height: 50px;
+												width: 50px;
+											}
+										}
+									</style>
 								</div>
 								<nav aria-label="breadcrumb" role="navigation">
 									<ol class="breadcrumb">
 										<li class="breadcrumb-item"><a href="/client_interface/index2.html">Home</a>
 										</li>
-										<li class="breadcrumb-item active" aria-current="page">Documentators</li>
+										<li class="breadcrumb-item active" aria-current="page">Documentation</li>
 									</ol>
 								</nav>
 							</div>
@@ -83,18 +108,28 @@
 											</span>
 										</div>
 										<div class="contact-name">
-											<h4>Documentators</h4>
+											<h4>Ashok Desai</h4>
 										</div>
 										<div class="contact-skill">
 											<span class="badge badge-pill">Solan</span>
 											<span class="badge badge-pill">District Court</span>
 										</div>
 										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
+											documentator for district court.
 										</div>
 									</div>
 									<div class="view-contact">
-										<a href="#">View Profiles</a>
+										<a href="#" data-document="ashokdesai" class="showPopupButton">View Profiles</a>
+										<div class="popup-overlay" id="popupOverlay"></div>
+										<div class="popup" id="popup">
+											<i id="closePopup" class="bx bx-x close-icon"></i>
+											<h2><span id="name"></span></h2>
+											<p><b>Profession:</b> <span id="profession"></span></p>
+											<p><b>Details:</b> <span id="details"></span></p>
+											<button id="bookingButton">Book Now</button>
+										</div>
+										<!-- <link rel="stylesheet" href="/client_interface/vendors/styles/data_css.css"> -->
+										<!-- <script src="/client_interface/vendors/scripts/advocates_data.js"></script> -->
 									</div>
 								</div>
 							</li>
@@ -108,20 +143,30 @@
 											</span>
 										</div>
 										<div class="contact-name">
-											<h4>Documentators</h4>
+											<h4>Ram Jethmalani</h4>
 										</div>
 										<div class="contact-skill">
 											<span class="badge badge-pill">Solan</span>
 											<span class="badge badge-pill">District Court</span>
 										</div>
 										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
+											documentator for district court.
 										</div>
 									</div>
 									<div class="view-contact">
-										<a href="#">View Profiles</a>
+										<a href="#" data-document="ramjethmalani" class="showPopupButton">View
+											Profiles</a>
+										<div class="popup-overlay" id="popupOverlay"></div>
+										<div class="popup" id="popup">
+											<i id="closePopup" class="bx bx-x close-icon"></i>
+											<h2><span id="name"></span></h2>
+											<p><b>Profession:</b> <span id="profession"></span></p>
+											<p><b>Details:</b> <span id="details"></span></p>
+											<button id="bookingButton">Book Now</button>
+										</div>
+										<!-- <link rel="stylesheet" href="/client_interface/vendors/styles/data_css.css"> -->
+										<!-- <script src="/client_interface/vendors/scripts/advocates_data.js"></script> -->
 									</div>
-								</div>
 							</li>
 							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
 								<div class="contact-directory-box">
@@ -132,66 +177,30 @@
 											</span>
 										</div>
 										<div class="contact-name">
-											<h4>Documentators</h4>
+											<h4>Mukul Rohatgi</h4>
 										</div>
 										<div class="contact-skill">
 											<span class="badge badge-pill">Solan</span>
 											<span class="badge badge-pill">District Court</span>
 										</div>
 										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
+											documentator for district court.
+
 										</div>
 									</div>
 									<div class="view-contact">
-										<a href="#">View Profiles</a>
-									</div>
-								</div>
-							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="/client_interface/vendors/images/photo2.jpg" alt="">
-											</span>
+										<a href="#" data-document="mukulrohatgi" class="showPopupButton">View
+											Profiles</a>
+										<div class="popup-overlay" id="popupOverlay"></div>
+										<div class="popup" id="popup">
+											<i id="closePopup" class="bx bx-x close-icon"></i>
+											<h2><span id="name"></span></h2>
+											<p><b>Profession:</b> <span id="profession"></span></p>
+											<p><b>Details:</b> <span id="details"></span></p>
+											<button id="bookingButton">Book Now</button>
 										</div>
-										<div class="contact-name">
-											<h4>Documentators</h4>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">Solan</span>
-											<span class="badge badge-pill">District Court</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profiles</a>
-									</div>
-								</div>
-							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Documentators</h4>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">Solan</span>
-											<span class="badge badge-pill">District Court</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profiles</a>
+										<!-- <link rel="stylesheet" href="/client_interface/vendors/styles/data_css.css"> -->
+										<!-- <script src="/client_interface/vendors/scripts/advocates_data.js"></script> -->
 									</div>
 								</div>
 							</li>
@@ -212,6 +221,8 @@
 	<script src="vendors/scripts/process.js"></script>
 	<script src="vendors/scripts/layout-settings.js"></script>
 	<script src="../asset/client/c_navbar.js"></script>
+	<script src="/client_interface/vendors/scripts/documentation_data.js"></script>
+
 </body>
 
 </html>
