@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<style>
+		.toggle-password {
+			position: absolute;
+			/* right: 10px; */
+			margin-top: 25px;
+			margin-left: -25px;
+			transform: translateY(-50%);
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="title-text">
+			<div class="title login">Login Form</div>
+		</div>
+		<div class="form-container">
+			<div class="slide-controls">
+				<input type="radio" name="slide" id="login" checked>
+				<input type="radio" name="slide" id="signup">
+				<label for="login" class="slide login">Log</label>
+				<label for="signup" class="slide signup">in</label>
+				<div class="slider-tab"></div>
+			</div>
+			<div class="form-inner">
+
+				<form action="/login" class="login" name="form" id="form" method="POST">
+
+					<div class="field">
+						<input type="text" placeholder="Phone Number" name="number" required id="mail" />
+					</div>
+					<div class="field">
+						<input type="password" placeholder="Password" name="password" required id="password" />
+						<span class="toggle-password" onclick="togglePasswordVisibility()"><i
+								class='bx bx-hide'></i></span>
+					</div>
+					<div class="pass-link"><a href="/pages/forgot.html">Forgot password?</a></div>
+					<div class="signup-link">
+						<%=errorMess%>
+					</div>
+					<div class="field btn">
+						<div class="btn-layer"></div>
+						<input type="submit" class="Submit" value="Login" />
+					</div>
+					<div class="signup-link">Not a member? <a href="/pages/signup.html">Signup now</a></div>
+				</form>
+				<form action="#" class="signup" method="post">
+					<div class="field">
+						<input type="text" placeholder="Email Address" required>
+					</div>
+					<div class="field">
+						<input type="password" placeholder="Password" required>
+					</div>
+					<div class="field">
+						<input type="password" placeholder="Confirm password" required>
+					</div>
+					<div class="field btn">
+						<div class="btn-layer"></div>
+						<input type="submit" value="Signup">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function togglePasswordVisibility() {
+			var passwordInput = document.getElementById("password");
+			var eyeIcon = document.querySelector(".toggle-password i");
+
+			if (passwordInput.type === "password") {
+				passwordInput.type = "text";
+				eyeIcon.classList.remove('bx-hide');
+				eyeIcon.classList.add('bx-show');
+			} else {
+				passwordInput.type = "password";
+				eyeIcon.classList.remove('bx-show');
+				eyeIcon.classList.add('bx-hide');
+			}
+		}
+	</script>
+
+</body>
+
+</html>

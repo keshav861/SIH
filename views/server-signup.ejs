@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="../css/server-signup.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="/server-signup" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" name="name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" name="email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" name="number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">BR Number</span>
+            <input type="text" placeholder="Enter your BR-number" name="brnumber" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" id="password" name="password" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility('password', 'eye-icon')"><i
+                class='bx bx-hide' id="eye-icon"></i></span>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" id="conf_password" name="conf_password" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility('conf_password', 'conf-eye-icon')"><i
+                class='bx bx-hide' id="conf-eye-icon"></i></span>
+          </div>
+        </div>
+        <script>
+          function togglePasswordVisibility(inputId, iconId) {
+            var passwordInput = document.getElementById(inputId);
+            var eyeIcon = document.getElementById(iconId);
+
+            if (passwordInput.type === "password") {
+              passwordInput.type = "text";
+              eyeIcon.classList.remove('bx-hide');
+              eyeIcon.classList.add('bx-show');
+            } else {
+              passwordInput.type = "password";
+              eyeIcon.classList.remove('bx-show');
+              eyeIcon.classList.add('bx-hide');
+            }
+          }
+        </script>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <input type="radio" name="gender" id="dot-4">
+          <input type="radio" name="gender" id="dot-5">
+          <!-- <span class="gender-title">SERVICES</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Advocate</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Document <br> Writter</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Notaries</span>
+            </label>
+            <label for="dot-4">
+              <span class="dot four"></span>
+              <span class="gender">Arbitrators</span>
+            </label>
+            <label for="dot-5">
+              <span class="dot five"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div> -->
+        </div>
+
+        <div><%=errorMess%></div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+      <div class="redirect">
+        <!-- <a href="#"> Register as Service provider HERE! </a> -->
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

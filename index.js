@@ -22,6 +22,7 @@ const port = process.env.PORT || 5500;
 const senderMail = "ecoverse24@gmail.com";
 const password = "qcxs lfxl iyfl witc";
 let clientotp = "";
+let clientotp2="";
 let serverotp = "";
 let userEmail = "";
 let userPassword = "";
@@ -103,22 +104,21 @@ app.post("/login", async (req, res) => {
         }
 
         else
-            res.sendFile(__dirname + "/pages/login.html");
-    } else if (provider) {
+            // res.sendFile(__dirname + "/pages/login.html");
+            res.render('login', { errorMess: "Wrong Password!" });
+    }
+    else if (provider) {
         if (req.body["password"] === provider.password) {
             req.session.userId = provider._id;
             res.sendFile(__dirname + "/user_interface/index2.html");
         }
 
         else
-            res.sendFile(__dirname + "/pages/login.html");
+            // res.sendFile(__dirname + "/pages/login.html");
+            res.render('login', { errorMess: "Wrong Password!" });
     } else
         res.sendFile(__dirname + "/pages/signup.html");
 });
-
-
-
-
 
 
 
@@ -149,7 +149,7 @@ app.get('/login', requireAuth, async (req, res) => {
 app.post("/signup", async (req, res) => {
     const existing = await Person.findOne({ number: req.body["number"] }).exec();
     if (existing) {
-        res.send("User Exists");
+        res.render('login', { errorMess: "User Exists. Please log-in." });
     } else if (req.body["password"] == req.body["conf_password"]) {
         userEmail = req.body.email;
         userPassword = req.body.password;
@@ -176,7 +176,7 @@ app.post("/signup", async (req, res) => {
         res.render('otp', { spanText1: "", spanText2: "OTP succesfully sent!" });
     }
     else {
-        res.send("PASSWORDS DON'T MATCH");
+        res.render('signup', { errorMess: "Passwords don't match!" });
     }
 })
 
@@ -211,7 +211,7 @@ app.post("/OTP", async (req, res) => {
 app.post("/server-signup", async (req, res) => {
     const existing = await Server.findOne({ number: req.body["number"] }).exec();
     if (existing) {
-        res.send("Service Provider Exists");
+        res.render('login', { errorMess: "User already exists. Please log-in." });
     } else if (req.body["password"] == req.body["conf_password"]) {
         userEmail = req.body.email;
         userPassword = req.body.password;
@@ -238,9 +238,9 @@ app.post("/server-signup", async (req, res) => {
         res.render('otp', { spanText1: "", spanText2: "OTP succesfully sent!" });
     }
     else {
-        res.send("PASSWORDS DON'T MATCH");
+        res.render('server-signup', { errorMess: "Passwords don't match." });
     }
-})
+});
 
 
 app.post("/reset", async (req, res) => {
@@ -262,8 +262,65 @@ app.post("/reset", async (req, res) => {
         res.sendFile(__dirname + "/pages/login.html");
     }
     else
-    res.send("Passwords don't match");
+        res.send("Passwords don't match");
 });
+
+// --------------------------------------------------------------------------
+app.post('/conf_forgot', async (req, res) => {
+    if (req.body["password"] == req.body["conf_password"]) {
+        if (person) {
+            await Person.updateOne({ email: person.email }, { password: req.body["password"] });
+        }
+        // res.send(`${person}`);
+        else if (provider) {
+                await Server.updateOne({ email: provider.email }, { password: req.body["password"] });
+        }
+        res.sendFile(__dirname + "/pages/login.html");
+    }
+    else
+        res.send("Passwords don't match");
+});
+
+
+app.post('/forgot', async (req, res) => {
+    person = await Person.findOne({ email: req.body["email"] }).exec();
+    provider = await Server.findOne({ email: req.body["email"] }).exec();
+    if (person || provider) {
+        userEmail = req.body.email;
+        clientotp2 = Math.floor(100000 + Math.random() * 900000);
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: senderMail,
+                pass: password,
+            },
+        });
+
+        const mailOptions = {
+            from: senderMail,
+            to: userEmail,
+            subject: 'OTP for Email Verification',
+            text: `Your OTP code is ${clientotp2}.`,
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.render('otp2', { spanText1: "", spanText2: "OTP succesfully sent!" });
+    }
+    else
+        res.render('signup', { errorMess: "Please sign-up." });
+});
+
+app.post('/OTP2', async (req, res) => {
+    const userOTP = req.body.n1 + req.body.n2 + req.body.n3 + req.body.n4 + req.body.n5 + req.body.n6;
+    if (userOTP == clientotp2) {
+        res.sendFile(__dirname + "/pages/conf_forget.html");
+    }
+    else {
+        res.render('otp2', { spanText1: "Incorrect OTP!", spanText2: "" });
+    }
+});
+// ------------------------------------------------------------------------------------------------
 
 
 app.listen(port, () => {
