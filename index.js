@@ -15,6 +15,8 @@ import mongoose from "mongoose"
 const __dirname = dirname(fileURLToPath(
     import.meta.url));
 
+
+
 const app = express();
 const port = process.env.PORT || 5500;
 const senderMail = "ecoverse24@gmail.com";
@@ -81,10 +83,10 @@ app.use(session({
 }));
 
 app.use((req, res, next) => {
-    if(res.path === '/login')
+    // if(res.path === '/login')
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-else
-res.setHeader('Cache-Control', 'no-store, must-revalidate');
+    // else
+    // res.setHeader('Cache-Control', 'no-store, must-revalidate');
     next();
 });
 
@@ -95,41 +97,53 @@ app.post("/login", async (req, res) => {
     provider = await Server.findOne({ number: req.body["number"] }).exec();
 
     if (person) {
-        if (req.body["password"] === person.password)
+        if (req.body["password"] === person.password) {
+            req.session.userId = person._id;
             res.sendFile(__dirname + "/client_interface/index2.html");
+        }
+
         else
             res.sendFile(__dirname + "/pages/login.html");
     } else if (provider) {
-        if (req.body["password"] === provider.password)
+        if (req.body["password"] === provider.password) {
+            req.session.userId = provider._id;
             res.sendFile(__dirname + "/user_interface/index2.html");
+        }
+
         else
             res.sendFile(__dirname + "/pages/login.html");
     } else
         res.sendFile(__dirname + "/pages/signup.html");
-    console.log("login - " + `${person}`);
-    console.log("login - " + `${provider}`);
-})
+});
 
 
 
-app.get('/login', async (req, res) => {
-    res.sendFile(__dirname + "/pages/login.html");
-})
+
 
 
 
 app.get('/log-out', (req, res) => {
-    person = null;
-    provider = null;
+    // person = null;
+    // provider = null;
     req.session.destroy((err) => {
         if (err) {
             console.error('Error destroying session:', err);
         }
-        
         res.redirect('/login');
     });
 });
 
+const requireAuth = (req, res, next) => {
+    if (req.session && req.session.userId) {
+        return next();
+    } else {
+        res.redirect('/login');
+    }
+};
+
+app.get('/login', requireAuth, async (req, res) => {
+    res.sendFile(__dirname + "/pages/login.html");
+})
 
 
 app.post("/signup", async (req, res) => {
@@ -230,20 +244,26 @@ app.post("/server-signup", async (req, res) => {
 
 
 app.post("/reset", async (req, res) => {
-    if (req.body["password"] === req.body["conf_password"]) {
+    if (req.body["password"] == req.body["conf_password"]) {
         if (person) {
-            await Person.updateOne({ email: person.email }, { password: req.body["password"] });
+            if (req.body["cur_password"] == person.password)
+                await Person.updateOne({ email: person.email }, { password: req.body["password"] });
+            else
+                // res.sendFile(__dirname + "/client_interface/reset-password.html");
+                res.send("Incorrect current password");
         }
         // res.send(`${person}`);
         else if (provider) {
-            await Server.updateOne({ email: provider.email }, { password: req.body["password"] });
+            if (req.body["cur_password"] == provider.password)
+                await Server.updateOne({ email: provider.email }, { password: req.body["password"] });
+            else
+                res.send("Incorrect current password");
         }
         res.sendFile(__dirname + "/pages/login.html");
-        console.log(`${person}`);
-        console.log(`${provider}`);
     }
-    // res.send(`${provider}`);
-})
+    else
+    res.send("Passwords don't match");
+});
 
 
 app.listen(port, () => {
