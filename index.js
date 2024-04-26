@@ -15,7 +15,7 @@ const __dirname = dirname(fileURLToPath(
 const app = express();
 const port = process.env.PORT || 5500;
 
-mongoose.connect("mongodb://localhost:27017/legal-easy", { useNewUrlParser: true });
+mongoose.connect("mongodb://127.0.0.1:27017/legal-easy", { useNewUrlParser: true });
 
 const personSchema = new mongoose.Schema({
     name: String,
@@ -80,6 +80,8 @@ app.post("/login", async (req, res) => {
             res.sendFile(__dirname + "/pages/login.html");
     } else
         res.sendFile(__dirname + "/pages/signup.html");
+    console.log(`${person}`);
+    console.log(`${provider}`);
 })
 
 
@@ -128,13 +130,15 @@ app.post("/server-signup", async (req, res) => {
 app.post("/reset", async (req, res) => {
     if (req.body["password"] === req.body["conf_password"]) {
         if (person) {
-            await Person.updateOne({email: person.email},{password: req.body["password"]});
+            await Person.updateOne({ email: person.email }, { password: req.body["password"] });
         }
         // res.send(`${person}`);
         else if (provider) {
-            await Server.updateOne({email: provider.email},{password: req.body["password"]});
+            await Server.updateOne({ email: provider.email }, { password: req.body["password"] });
         }
         res.sendFile(__dirname + "/pages/login.html");
+        console.log(`${person}`);
+        console.log(`${provider}`);
     }
     // res.send(`${provider}`);
 })
@@ -161,5 +165,3 @@ io.on('connection', (socket) => {
 
 })
 
-console.log(`${person}`);
-console.log(`${provider}`);
