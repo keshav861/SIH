@@ -265,16 +265,12 @@
                             <span class="micon dw dw-library"></span><span class="mtext">Services</span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="/client_interface/contact-directory.html">Advocates</a></li>
+                            <li><a href="/client_interface/contact-directory.html">Consultancy</a></li>
                             <li><a href="/client_interface/documentator.html">Documentators</a></li>
-                            <li><a href="/client_interface/typewrtier.html">Typewriters</a></li>
                             <li><a href="/client_interface/arbitrators.html">Arbitraries</a></li>
-                            <li><a href="/client_interface/notaries.html">Notaries</a></li>
                             <li><a href="/client_interface/mediater.html">Mediaters</a></li>
                         </ul>
                     </li>
-
-
 
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle">
@@ -294,10 +290,10 @@
                         </a>
                     </li>
                     <li>
-						<a href="/comunity.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-user-11"></span><span class="mtext">Community</span>
-						</a>
-					</li>
+                        <a href="/comunity.html" class="dropdown-toggle no-arrow">
+                            <span class="micon dw dw-user-11"></span><span class="mtext">Community</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="/client_interface/invoice.html" class="dropdown-toggle no-arrow">
                             <span class="micon dw dw-invoice"></span><span class="mtext">Invoice</span>
@@ -328,12 +324,13 @@
                     </div>
                     <div class="col-md-6 col-sm-12 text-right">
                         <div class="upload-file">
-                            <button class="upload-button">
+                            <button class="upload-button" id="addDocumentBtn">
                                 <i class="fa fa-plus"></i>
-                              </button>
+                            </button>
+                            <input type="file" id="fileInput" style="display: none;">
                         </div>
                         <style>
-                            .upload-file{
+                            .upload-file {
                                 display: flex;
                                 position: absolute;
                                 top: 9px;
@@ -341,12 +338,13 @@
                                 cursor: pointer;
                                 z-index: 1;
                             }
-                            .upload-button{
+
+                            .upload-button {
                                 border: none;
                                 background-color: transparent;
                                 cursor: pointer;
                                 z-index: 999;
-                                }
+                            }
                         </style>
                         <div class="dropdown">
                             <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -406,46 +404,69 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-                    <div class="card-box pd-30 height-100-p">
-                        <div class="progress-box text-center">
-                            <button id="addDocumentBtn" class="btn btn-primary">Add Document</button>
-                            <!-- Input for file upload -->
-                            <input type="file" id="fileInput" style="display: none;">
-                        </div>
-                    </div>
+                <div class="title" style="margin-left: 17px; margin-bottom: 20px;">
+                    <h4>Documents</h4>
                 </div>
             </div>
             <div id="documentCardContainer" class="row clearfix">
                 <!-- Newly added document card will be appended here -->
             </div>
+            <style>
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: #fff;
+                    border: 1px solid #ccc;
+                    padding: 5px;
+                    z-index: 1000;
+                }
+
+                .dropdown-menu a {
+                    display: block;
+                    padding: 5px;
+                    color: #333;
+                    text-decoration: none;
+                }
+
+                .text-light-purple {
+                    cursor: pointer;
+                    transition: color 0.3s;
+                }
+
+                .text-light-purple:hover {
+                    color: #ffc107;
+                    /* Change to desired hover color */
+                }
+            </style>
 
 
             <script>
-                document.getElementById('addDocumentBtn').addEventListener('click', function() {
+                document.getElementById('addDocumentBtn').addEventListener('click', function () {
                     // Trigger file upload when button is clicked
                     document.getElementById('fileInput').click();
                 });
-            
+
                 // Listen for file selection
-                document.getElementById('fileInput').addEventListener('change', function(event) {
+                document.getElementById('fileInput').addEventListener('change', function (event) {
                     // Get the uploaded file
                     var file = event.target.files[0];
-            
+
                     // Create a new document card element
                     var documentCard = document.createElement('div');
-                    documentCard.classList.add('col-lg-3', 'col-md-6', 'col-sm-12', 'mb-30');
-                    
+                    documentCard.classList.add('col-lg-3', 'col-md-6', 'col-sm-12', 'mb-30', 'document-card');
+
                     // Get file type and icon based on the file extension
                     var fileType = file.type;
                     var iconName = getFileIconName(file.name);
-            
+
                     // Display appropriate icon based on the file type
                     var filePreview = '';
                     if (fileType.includes('pdf')) {
                         filePreview = '<i class="fa fa-file-pdf fa-5x"></i>';
                     } else if (fileType.startsWith('image')) {
-                        filePreview = `<img src="${URL.createObjectURL(file)}" class="file-preview-img" alt="Preview">`;
+                        filePreview = `<img src="${URL.createObjectURL(file)}" class="card-preview" alt="Preview">`;
                     } else if (fileType.includes('word')) {
                         filePreview = '<i class="fa fa-file-word fa-5x"></i>';
                     } else if (fileType.includes('excel')) {
@@ -453,20 +474,46 @@
                     } else {
                         filePreview = '<i class="fa fa-file fa-5x"></i>';
                     }
-            
+
                     documentCard.innerHTML = `
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="progress-box text-center">
-                                ${filePreview}
-                                <h5 class="text-light-purple h5">${file.name}</h5>
-                            </div>
+            <div class="card-box pd-30 height-100-p">
+                <div class="progress-box text-center">
+                    <div class="card-content">
+                        ${filePreview}
+                        <div class="dropdown-menu" style="">
+                            <a href="#" class="show-file">Show File</a>
+                            <a href="#" class="download-file" download="${file.name}">Download File</a>
                         </div>
-                    `;
-            
+                        <h5 class="text-light-purple h5">${file.name}</h5>
+                    </div>
+                </div>
+            </div>
+        `;
+
                     // Append the new document card to the document card container
                     document.getElementById('documentCardContainer').appendChild(documentCard);
+
+                    // Add event listeners for dropdown options
+                    var dropdownToggle = documentCard.querySelector('.text-light-purple');
+                    var dropdownMenu = documentCard.querySelector('.dropdown-menu');
+                    dropdownToggle.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                    });
+
+                    // Close dropdown menu when clicking outside of it
+                    document.addEventListener('click', function (e) {
+                        if (!dropdownMenu.contains(e.target)) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    });
+
+                    // Prevent dropdown menu from closing when clicking inside it
+                    dropdownMenu.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                    });
                 });
-            
+
                 // Function to get file icon name based on file extension
                 function getFileIconName(fileName) {
                     var extension = fileName.split('.').pop().toLowerCase();

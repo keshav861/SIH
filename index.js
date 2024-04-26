@@ -79,8 +79,12 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
 app.use((req, res, next) => {
-    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    if(res.path === '/login')
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+else
+res.setHeader('Cache-Control', 'no-store, must-revalidate');
     next();
 });
 
@@ -107,9 +111,11 @@ app.post("/login", async (req, res) => {
 })
 
 
+
 app.get('/login', async (req, res) => {
     res.sendFile(__dirname + "/pages/login.html");
 })
+
 
 
 app.get('/log-out', (req, res) => {
@@ -119,9 +125,11 @@ app.get('/log-out', (req, res) => {
         if (err) {
             console.error('Error destroying session:', err);
         }
+        
         res.redirect('/login');
     });
 });
+
 
 
 app.post("/signup", async (req, res) => {

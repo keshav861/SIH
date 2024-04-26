@@ -210,18 +210,16 @@ class c_Navbar extends HTMLElement {
 					</li>
 					
 					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Services</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="/client_interface/contact-directory.html">Advocates</a></li>
-							<li><a href="/client_interface/documentator.html">Documentators</a></li>
-							<li><a href="/client_interface/typewrtier.html">Typewriters</a></li>
-							<li><a href="/client_interface/arbitrators.html">Arbitraries</a></li>
-							<li><a href="/client_interface/notaries.html">Notaries</a></li>
-							<li><a href="/client_interface/mediater.html">Mediaters</a></li>
-						</ul>
-					</li>
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-library"></span><span class="mtext">Services</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/client_interface/contact-directory.html">Consultancy</a></li>
+                            <li><a href="/client_interface/documentator.html">Documentators</a></li>
+                            <li><a href="/client_interface/arbitrators.html">Arbitraries</a></li>
+                            <li><a href="/client_interface/mediater.html">Mediaters</a></li>
+                        </ul>
+                    </li>
 				
 				
 				
