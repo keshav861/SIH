@@ -232,7 +232,7 @@ class l_Navbar extends HTMLElement {
 					</li>
 					<li>
 						<a href="/user_interface/subsmodel/index.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-crown"></span><span class="mtext">Subscription</span>
+							<span class="micon dw dw-crown"></span><span class="mtext">Plans</span>
 						</a>
 					</li>
 					<!-- <li>

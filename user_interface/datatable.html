@@ -21,6 +21,8 @@
 	<link rel="stylesheet" type="text/css" href="/user_interface/src/plugins/datatables/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="/user_interface/src/plugins/datatables/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="/user_interface/vendors/styles/style.css">
+    <script src="https://kit.fontawesome.com/9a1e185d26.js" crossorigin="anonymous"></script>
+
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -38,652 +40,200 @@
 	<div class="mobile-menu-overlay"></div>
 
 	<div class="main-container">
-		<div class="pd-ltr-20 xs-pd-20-10">
-			<div class="min-height-200px">
-				<div class="page-header">
-					<div class="row">
-						<div class="col-md-6 col-sm-12">
-							<div class="title">
-								<h4>DataTable</h4>
-							</div>
-							<nav aria-label="breadcrumb" role="navigation">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="/user_interface/index2.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">DataTable</li>
-								</ol>
-							</nav>
-						</div>
-						<div class="col-md-6 col-sm-12 text-right">
-							<div class="dropdown">
-								<a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									September 2023
-								</a>
-								<!-- <div class="dropdown-menu dropdown-menu-right">
+        <div class="xs-pd-20-10 pd-ltr-20">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title">
+                            <h4>Dashboard</h4>
+                        </div>
+                        <nav aria-label="breadcrumb" role="navigation">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/client_interface/index2.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right">
+                        <div class="upload-file">
+                            <button class="upload-button" id="addDocumentBtn">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                            <input type="file" id="fileInput" style="display: none;">
+                        </div>
+                        <style>
+                            .upload-file {
+                                display: flex;
+                                position: absolute;
+                                top: 9px;
+                                right: 220px;
+                                cursor: pointer;
+                                z-index: 1;
+                            }
+
+                            .upload-button {
+                                border: none;
+                                background-color: transparent;
+                                cursor: pointer;
+                                z-index: 999;
+                            }
+                        </style>
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                September 2023
+                            </a>
+                            <!-- <div class="dropdown-menu dropdown-menu-right">
 								<a class="dropdown-item" href="#">Export List</a>
 								<a class="dropdown-item" href="#">Policies</a>
 								<a class="dropdown-item" href="#">View Assets</a>
 							</div> -->
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Simple Datatable start -->
-				<div class="card-box mb-30">
-					<div class="pd-20">
-						<h4 class="text-blue h4">Clients Details</h4>
-						<!-- <p class="mb-0">you can find more options <a class="text-primary" href="https://datatables.net/" target="_blank">Click Here</a></p> -->
-					</div>
-					<div class="pb-20">
-						<table class="data-table table stripe hover nowrap">
-							<thead>
-								<tr>
-									<th class="table-plus datatable-nosort">Client Name</th>
-									<th>Age</th>
-									<th>City</th>
-									<th>Address</th>
-									<th>Start Date</th>
-									<th class="datatable-nosort">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="table-plus">Rajat</td>
-									<td>25</td>
-									<td>Madhya Pradesh</td>
-									<td>45 B moti nagar </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>20</td>
-									<td>Balochistan</td>
-									<td>45 B moti nagar </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>25</td>
-									<td>Balochistan</td>
-									<td>45 B moti nagar </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>20</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>18</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>
-										<div class="dropdown">
-											<!-- <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a> -->
-											<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"> -->
-												<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
-												 
-											<!-- </div> -->
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<!-- Simple Datatable End -->
-				<!-- multiple select row Datatable start -->
-				<!-- <div class="card-box mb-30">
-					<div class="pd-20">
-						<h4 class="text-blue h4">Data Table with multiple select row</h4>
-					</div>
-					<div class="pb-20">
-						<table class="data-table table hover multiple-select-row nowrap">
-							<thead>
-								<tr>
-									<th class="table-plus datatable-nosort">Client Name</th>
-									<th>Age</th>
-									<th>City</th>
-									<th>Address</th>
-									<th>Start Date</th>
-									<th>Salary</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="table-plus">Rajat</td>
-									<td>25</td>
-									<td>Madhya Pradesh</td>
-									<td>45 B moti nagar </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>20</td>
-									<td>Balochistan</td>
-									<td>45 B moti nagar </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>25</td>
-									<td>Balochistan</td>
-									<td>45 B moti nagar </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>20</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>18</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div> -->
-				<!-- multiple select row Datatable End -->
-				<!-- Checkbox select Datatable start -->
-				<!-- <div class="card-box mb-30">
-					<div class="pd-20">
-						<h4 class="text-blue h4">Client Details Checklist</h4>
-					</div>
-					<div class="pb-20">
-						<table class="checkbox-datatable table nowrap">
-							<thead>
-								<tr>
-									<th><div class="dt-checkbox">
-											<input type="checkbox" name="select_all" value="1" id="example-select-all">
-											<span class="dt-checkbox-label"></span>
-										</div>
-									</th>
-									<th>Client Name</th>
-									<th>Position</th>
-									<th>City</th>
-									<th>Start date</th>
-									<th>Salary</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td></td>
-									<td>Tiger Nixon</td>
-									<td>System Architect</td>
-									<td>Tokyo</td>
-									<td>2008/11/28</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Angelica Ramos</td>
-									<td>Chief Executive Officer (CEO)</td>
-									<td>London</td>
-									<td>2009/10/09</td>
-									<td>Rs .1,200,000</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Ashton Cox</td>
-									<td>Junior Technical Author</td>
-									<td>San Francisco</td>
-									<td>2009/01/12</td>
-									<td>Rs .86,000</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Bradley Greer</td>
-									<td>Software Engineer</td>
-									<td>London</td>
-									<td>2012/10/13</td>
-									<td>Rs .132,000</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Brenden Wagner</td>
-									<td>Software Engineer</td>
-									<td>San Francisco</td>
-									<td>2011/06/07</td>
-									<td>Rs .206,850</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Caesar Vance</td>
-									<td>Pre-Sales Support</td>
-									<td>New York</td>
-									<td>2011/12/12	</td>
-									<td>Rs .106,450</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Cedric Kelly</td>
-									<td>Senior Javascript Developer</td>
-									<td>Edinburgh</td>
-									<td>2012/03/29</td>
-									<td>Rs .433,060</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Dai Rios</td>
-									<td>Personnel Lead</td>
-									<td>Edinburgh</td>
-									<td>2012/09/26</td>
-									<td>Rs .217,500</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Doris Wilder</td>
-									<td>Sales Assistant</td>
-									<td>Sidney</td>
-									<td>2010/09/20</td>
-									<td>Rs .85,600</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Fiona Green</td>
-									<td>Chief Operating Officer (COO)</td>
-									<td>San Francisco</td>
-									<td>2010/03/11</td>
-									<td>Rs .850,000</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Gavin Cortez</td>
-									<td>Team Leader</td>
-									<td>San Francisco</td>
-									<td>2008/10/26</td>
-									<td>Rs .235,500</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Herrod Chandler</td>
-									<td>Sales Assistant</td>
-									<td>San Francisco</td>
-									<td>2012/08/06</td>
-									<td>Rs .137,500</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Hope Fuentes</td>
-									<td>Secretary</td>
-									<td>San Francisco</td>
-									<td>2010/02/12</td>
-									<td>Rs .109,850</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>Jena Gaines</td>
-									<td>City Manager</td>
-									<td>London</td>
-									<td>2008/12/19</td>
-									<td>Rs .90,560</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div> -->
-				<!-- Checkbox select Datatable End -->
-				<!-- Export Datatable start -->
-				<!-- <div class="card-box mb-30">
-					<div class="pd-20">
-						<h4 class="text-blue h4">Client Details export</h4>
-					</div>
-					<div class="pb-20">
-						<table class="table hover multiple-select-row data-table-export nowrap">
-							<thead>
-								<tr>
-									<th class="table-plus datatable-nosort">Client Name</th>
-									<th>Age</th>
-									<th>City</th>
-									<th>Address</th>
-									<th>Start Date</th>
-									<th>Salary</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="table-plus">Rajat</td>
-									<td>25</td>
-									<td>Madhya Pradesh</td>
-									<td>45 B moti nagar </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>20</td>
-									<td>Balochistan</td>
-									<td>45 B moti nagar </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>25</td>
-									<td>Balochistan</td>
-									<td>45 B moti nagar </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>20</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>18</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Madhya Pradesh</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-								<tr>
-									<td class="table-plus">Keshav</td>
-									<td>30</td>
-									<td>Balochistan</td>
-									<td>23 A madrid mohanabad </td>
-									<td>23-09-2023</td>
-									<td>Rs .162,700</td>
-								</tr>
-							</tbody>
-						</table>
-						<div class="card-box mb-30"></div>
-					</div>
-				</div> -->
-				<!-- Export Datatable End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="title" style="margin-left: 17px; margin-bottom: 20px;">
+                    <h4>Documents</h4>
+                </div>
+            </div>
+            <div id="documentCardContainer" class="row clearfix">
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-30 document-card">
+                    <div class="card-box pd-30 height-100-p">
+                        <div class="progress-box text-center">
+                            <div class="card-content">
+                                <i class="fa fa-file-pdf fa-5x"></i>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="show-file">Show File</a>
+                                    <a href="#" class="download-file" download="${file.name}">Download File</a>
+                                </div>
+                                <h5 class="text-light-purple h5">Document 1</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Newly added document card will be appended here -->
+                </div>
+            </div>
+            <style>
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: #fff;
+                    border: 1px solid #ccc;
+                    padding: 5px;
+                    z-index: 1000;
+                }
+
+                .dropdown-menu a {
+                    display: block;
+                    padding: 5px;
+                    color: #333;
+                    text-decoration: none;
+                }
+
+                .text-light-purple {
+                    cursor: pointer;
+                    transition: color 0.3s;
+                }
+
+                .text-light-purple:hover {
+                    color: #ffc107;
+                    /* Change to desired hover color */
+                }
+            </style>
+
+
+            <script>
+                document.getElementById('addDocumentBtn').addEventListener('click', function () {
+                    // Trigger file upload when button is clicked
+                    document.getElementById('fileInput').click();
+                });
+
+                // Listen for file selection
+                document.getElementById('fileInput').addEventListener('change', function (event) {
+                    // Get the uploaded file
+                    var file = event.target.files[0];
+
+                    // Create a new document card element
+                    var documentCard = document.createElement('div');
+                    documentCard.classList.add('col-lg-3', 'col-md-6', 'col-sm-12', 'mb-30', 'document-card');
+
+                    // Get file type and icon based on the file extension
+                    var fileType = file.type;
+                    var iconName = getFileIconName(file.name);
+
+                    // Display appropriate icon based on the file type
+                    var filePreview = '';
+                    if (fileType.includes('pdf')) {
+                        filePreview = '<i class="fa fa-file-pdf fa-5x"></i>';
+                    } else if (fileType.startsWith('image')) {
+                        filePreview = `<i class="fa-solid fa-image fa-5x"></i>`;
+                    } else if (fileType.includes('word')) {
+                        filePreview = '<i class="fa fa-file-word fa-5x"></i>';
+                    } else if (fileType.includes('excel')) {
+                        filePreview = '<i class="fa fa-file-excel fa-5x"></i>';
+                    } else {
+                        filePreview = '<i class="fa fa-file fa-5x"></i>';
+                    }
+
+                    documentCard.innerHTML = `
+            <div class="card-box pd-30 height-100-p">
+                <div class="progress-box text-center">
+                    <div class="card-content">
+                        ${filePreview}
+                        <div class="dropdown-menu" style="">
+                            <a href="#" class="show-file">Show File</a>
+                            <a href="#" class="download-file" download="${file.name}">Download File</a>
+                        </div>
+                        <h5 class="text-light-purple h5">${file.name}</h5>
+                    </div>
+                </div>
+            </div>
+        `;
+
+                    // Append the new document card to the document card container
+                    document.getElementById('documentCardContainer').appendChild(documentCard);
+
+                    // Add event listeners for dropdown options
+                    var dropdownToggle = documentCard.querySelector('.text-light-purple');
+                    var dropdownMenu = documentCard.querySelector('.dropdown-menu');
+                    dropdownToggle.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                    });
+
+                    // Close dropdown menu when clicking outside of it
+                    document.addEventListener('click', function (e) {
+                        if (!dropdownMenu.contains(e.target)) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    });
+
+                    // Prevent dropdown menu from closing when clicking inside it
+                    dropdownMenu.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                    });
+                });
+
+                // Function to get file icon name based on file extension
+                function getFileIconName(fileName) {
+                    var extension = fileName.split('.').pop().toLowerCase();
+                    if (extension === 'pdf') {
+                        return 'pdf';
+                    } else if (['jpg', 'jpeg', 'png', 'gif', 'bmp'].includes(extension)) {
+                        return 'image';
+                    } else if (['doc', 'docx'].includes(extension)) {
+                        return 'word';
+                    } else if (['xls', 'xlsx', 'csv'].includes(extension)) {
+                        return 'excel';
+                    } else {
+                        return 'file';
+                    }
+                }
+            </script>
+
 			</div>
 			<!-- <div class="footer-wrap pd-20 mb-20 card-box">
 				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
@@ -696,18 +246,5 @@
 	<script src="/user_interface/vendors/scripts/script.min.js"></script>
 	<script src="/user_interface/vendors/scripts/process.js"></script>
 	<script src="/user_interface/vendors/scripts/layout-settings.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<!-- buttons for Export datatable -->
-	<script src="/user_interface/src/plugins/datatables/js/dataTables.buttons.min.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/buttons.print.min.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/buttons.html5.min.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/buttons.flash.min.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/pdfmake.min.js"></script>
-	<script src="/user_interface/src/plugins/datatables/js/vfs_fonts.js"></script>
-	<!-- Datatabl/user_interface/e Setting js -->
-	<script src="/user_interface/vendors/scripts/datatable-setting.js"></script></body>
+</body>
 </html>
