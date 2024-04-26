@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
@@ -14,7 +15,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		rel="stylesheet">
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/icon-font.min.css">
@@ -30,6 +32,7 @@
 		gtag('config', 'UA-119386393-1');
 	</script> -->
 </head>
+
 <body>
 	<!-- <div class="pre-loader">
 		<div class="pre-loader-box">
@@ -60,7 +63,8 @@
 								</div>
 								<nav aria-label="breadcrumb" role="navigation">
 									<ol class="breadcrumb">
-										<li class="breadcrumb-item"><a href="/client_interface/index2.html">Home</a></li>
+										<li class="breadcrumb-item"><a href="/client_interface/index2.html">Home</a>
+										</li>
 										<li class="breadcrumb-item active" aria-current="page">Mediaters</li>
 									</ol>
 								</nav>
@@ -68,146 +72,131 @@
 						</div>
 					</div>
 					<div class="contact-directory-list">
-						<ul class="row">
+						<div class="pd-ltr-20 xs-pd-20-10">
+							<div class="min-height-200px">
+								<div class="container pd-0">
+									<div class="page-header">
+										<div class="row">
+											<div class="col-md-12 col-sm-12">
+												<form enctype="multipart/form-data">
+													<div class="party">
+														<h3>Party 1</h3>
+														<div class="form-group">
+															<label for="party1_name">Name</label>
+															<input type="text" class="form-control" id="party1_name"
+																placeholder="Enter name">
+														</div>
+														<div class="form-group">
+															<label for="party1_address">Address</label>
+															<textarea class="form-control" id="party1_address"
+																style="resize: none;" rows="2"
+																placeholder="Enter address"></textarea>
+														</div>
+														<div class="form-group">
+															<label for="party1_contact">Contact Details</label>
+															<input type="tel" class="form-control" id="party1_contact"
+																placeholder="Enter contact details">
+														</div>
 
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="/client_interface/vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Mediaters</h4>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">Solan</span>
-											<span class="badge badge-pill">District Court</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profiles</a>
-									</div>
-								</div>
-							</li>
+														<label class="btn btn-primary btn-file">
+															Upload Sign for Party 1 <input type="file"
+																style="display: none;" accept="image/*"
+																onchange="validateFileSize(this, 'party1')">
+														</label>
+														<span id="file-name-text-party1" style="display: none;"></span>
+														<span class="max-size-text">Max size (1MB)</span>
+														<p id="file-size-warning-party1"
+															style="color: red; display: none;">File size exceeds 1MB
+															limit.</p>
+													</div>
 
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="/client_interface/vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Mediaters</h4>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">Solan</span>
-											<span class="badge badge-pill">District Court</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profiles</a>
-									</div>
-								</div>
-							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="/client_interface/vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Mediaters</h4>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">Solan</span>
-											<span class="badge badge-pill">District Court</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profiles</a>
-									</div>
-								</div>
-							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="/client_interface/vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Mediaters</h4>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">Solan</span>
-											<span class="badge badge-pill">District Court</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profiles</a>
-									</div>
-								</div>
-							</li>
-							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-								<div class="contact-directory-box">
-									<div class="contact-dire-info text-center">
-										<div class="contact-avatar">
-											<span>
-												<img src="vendors/images/photo2.jpg" alt="">
-											</span>
-										</div>
-										<div class="contact-name">
-											<h4>Mediaters</h4>
-										</div>
-										<div class="contact-skill">
-											<span class="badge badge-pill">Solan</span>
-											<span class="badge badge-pill">District Court</span>
-										</div>
-										<div class="profile-sort-desc">
-											Lorem ipsum dolor sit amet, consectetur adipisicing magna aliqua.
-										</div>
-									</div>
-									<div class="view-contact">
-										<a href="#">View Profiles</a>
-									</div>
-								</div>
-							</li>
-							
+													<div class="party">
+														<h3>Party 2</h3>
+														<div class="form-group">
+															<label for="party2_name">Name</label>
+															<input type="text" class="form-control" id="party2_name"
+																placeholder="Enter name">
+														</div>
+														<div class="form-group">
+															<label for="party2_address">Address</label>
+															<textarea class="form-control" id="party2_address"
+																style="resize: none;" rows="2"
+																placeholder="Enter address"></textarea>
+														</div>
+														<div class="form-group">
+															<label for="party2_contact">Contact Details</label>
+															<input type="tel" class="form-control" id="party2_contact"
+																placeholder="Enter contact details">
+														</div>
+														<div class="form-group">
+															<label for="party2_case">Nature of the Case</label>
+															<textarea class="form-control" id="party2_case"
+																style="resize: none;" rows="5"
+																placeholder="Enter nature of the case"></textarea>
+														</div>
 
-						</ul>
+														<label class="btn btn-primary btn-file">
+															Upload Sign for Party 2 <input type="file"
+																style="display: none;" accept="image/*"
+																onchange="validateFileSize(this, 'party2')">
+														</label>
+														<span id="file-name-text-party2" style="display: none;"></span>
+														<span class="max-size-text">Max size (1MB)</span>
+														<p id="file-size-warning-party2"
+															style="color: red; display: none;">File size exceeds 1MB
+															limit.</p>
+													</div>
+													<button type="submit" class="btn btn-primary">Submit</button>
+												</form>
+												<script>
+													function validateFileSize(input, party) {
+														const fileSize = input.files[0].size / 1024 / 1024; // in MB
+														const fileSizeLimit = 1; // 1MB
+														const fileSizeWarning = document.getElementById(`file-size-warning-${party}`);
+														const fileNameText = document.getElementById(`file-name-text-${party}`);
+
+														console.log("File size warning:", fileSizeWarning);
+														console.log("File name text:", fileNameText);
+
+														if (fileSize > fileSizeLimit) {
+															if (fileSizeWarning) {
+																fileSizeWarning.style.display = 'block';
+															}
+															if (fileNameText) {
+																fileNameText.style.display = 'none';
+															}
+														} else {
+															if (fileSizeWarning) {
+																fileSizeWarning.style.display = 'none';
+															}
+															if (fileNameText) {
+																fileNameText.style.display = 'inline';
+																fileNameText.textContent = input.files[0].name;
+															}
+														}
+													}
+												</script>
+
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="footer-wrap pd-20 mb-20 card-box">
-				<!-- COPYRIGHTS @Ministry of law -->
+				<div class="footer-wrap pd-20 mb-20 card-box">
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- js -->
-	<script src="vendors/scripts/core.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
-	<script src="../asset/client/c_navbar.js"></script>
+		<!-- js -->
+		<script src="vendors/scripts/core.js"></script>
+		<script src="vendors/scripts/script.min.js"></script>
+		<script src="vendors/scripts/process.js"></script>
+		<script src="vendors/scripts/layout-settings.js"></script>
+		<script src="../asset/client/c_navbar.js"></script>
 
 </body>
+
 </html>
