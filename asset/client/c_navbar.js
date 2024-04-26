@@ -89,7 +89,7 @@ class c_Navbar extends HTMLElement {
 						<!-- <a class="dropdown-item" href="/client_interface/profile.html"><i class="dw dw-user1"></i> Profile</a>
                 <a class="dropdown-item" href="/client_interface/profile.html"><i class="dw dw-settings2"></i> Setting</a> -->
 						<!-- <a class="dropdown-item" href="/client_interface/faq.html"><i class="dw dw-help"></i> Help</a> -->
-						<a class="dropdown-item" href="/pages/login.html"><i class="dw dw-logout"></i> Log Out</a>
+						<a class="dropdown-item" href="/log-out"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
 				</div>
 			</div>

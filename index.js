@@ -64,6 +64,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 
+
+
+
 app.post("/login", async (req, res) => {
     person = await Person.findOne({ number: req.body["number"] }).exec();
     provider = await Server.findOne({ number: req.body["number"] }).exec();
@@ -80,10 +83,19 @@ app.post("/login", async (req, res) => {
             res.sendFile(__dirname + "/pages/login.html");
     } else
         res.sendFile(__dirname + "/pages/signup.html");
-    console.log(`${person}`);
-    console.log(`${provider}`);
+    console.log("login - "+`${person}`);
+    console.log("login - "+`${provider}`);
 })
 
+
+// app.get('/log-out', async(req,res)=>{
+//     person = "";
+//     provider = "";
+//     console.log("log-out - "+`${person}`);
+//     console.log("log-out - "+`${provider}`);
+//     res.render(__dirname + "/pages/login.html");
+    
+// })
 
 
 app.post("/signup", async (req, res) => {
