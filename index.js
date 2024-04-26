@@ -15,7 +15,7 @@ const __dirname = dirname(fileURLToPath(
 const app = express();
 const port = process.env.PORT || 5500;
 
-mongoose.connect("mongodb://localhost:27017/legal-easy", { useNewUrlParser: true });
+mongoose.connect("mongodb://127.0.0.1:27017/legal-easy", { useNewUrlParser: true });
 
 const personSchema = new mongoose.Schema({
     name: String,
