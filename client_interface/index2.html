@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="/client_interface/src/plugins/jvectormap/jquery-jvectormap-2.0.3.css">
     <link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/style.css">
+    <script src="https://kit.fontawesome.com/9a1e185d26.js" crossorigin="anonymous"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script> -->
@@ -404,6 +405,86 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                    <div class="card-box pd-30 height-100-p">
+                        <div class="progress-box text-center">
+                            <button id="addDocumentBtn" class="btn btn-primary">Add Document</button>
+                            <!-- Input for file upload -->
+                            <input type="file" id="fileInput" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="documentCardContainer" class="row clearfix">
+                <!-- Newly added document card will be appended here -->
+            </div>
+
+
+            <script>
+                document.getElementById('addDocumentBtn').addEventListener('click', function() {
+                    // Trigger file upload when button is clicked
+                    document.getElementById('fileInput').click();
+                });
+            
+                // Listen for file selection
+                document.getElementById('fileInput').addEventListener('change', function(event) {
+                    // Get the uploaded file
+                    var file = event.target.files[0];
+            
+                    // Create a new document card element
+                    var documentCard = document.createElement('div');
+                    documentCard.classList.add('col-lg-3', 'col-md-6', 'col-sm-12', 'mb-30');
+                    
+                    // Get file type and icon based on the file extension
+                    var fileType = file.type;
+                    var iconName = getFileIconName(file.name);
+            
+                    // Display appropriate icon based on the file type
+                    var filePreview = '';
+                    if (fileType.includes('pdf')) {
+                        filePreview = '<i class="fa fa-file-pdf fa-5x"></i>';
+                    } else if (fileType.startsWith('image')) {
+                        filePreview = `<img src="${URL.createObjectURL(file)}" class="file-preview-img" alt="Preview">`;
+                    } else if (fileType.includes('word')) {
+                        filePreview = '<i class="fa fa-file-word fa-5x"></i>';
+                    } else if (fileType.includes('excel')) {
+                        filePreview = '<i class="fa fa-file-excel fa-5x"></i>';
+                    } else {
+                        filePreview = '<i class="fa fa-file fa-5x"></i>';
+                    }
+            
+                    documentCard.innerHTML = `
+                        <div class="card-box pd-30 height-100-p">
+                            <div class="progress-box text-center">
+                                ${filePreview}
+                                <h5 class="text-light-purple h5">${file.name}</h5>
+                            </div>
+                        </div>
+                    `;
+            
+                    // Append the new document card to the document card container
+                    document.getElementById('documentCardContainer').appendChild(documentCard);
+                });
+            
+                // Function to get file icon name based on file extension
+                function getFileIconName(fileName) {
+                    var extension = fileName.split('.').pop().toLowerCase();
+                    if (extension === 'pdf') {
+                        return 'pdf';
+                    } else if (['jpg', 'jpeg', 'png', 'gif', 'bmp'].includes(extension)) {
+                        return 'image';
+                    } else if (['doc', 'docx'].includes(extension)) {
+                        return 'word';
+                    } else if (['xls', 'xlsx', 'csv'].includes(extension)) {
+                        return 'excel';
+                    } else {
+                        return 'file';
+                    }
+                }
+            </script>
+
+
             <!--<div class="row">
 				<div class="col-lg-4 col-md-6 col-sm-12 mb-30">
 					<div class="card-box pd-30 pt-10 height-100-p">
