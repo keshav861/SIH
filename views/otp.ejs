@@ -17,15 +17,17 @@
         <i class="bx bxs-check-shield"></i>
       </header>
       <h4>Enter OTP Code</h4>
-      <form action="#">
+      <form action="/OTP" method="post">
         <div class="input-field">
-          <input type="number" />
-          <input type="number" disabled />
-          <input type="number" disabled />
-          <input type="number" disabled />
-          <input type="number" disabled />
-          <input type="number" disabled />
+          <input type="number" name="n1"/>
+          <input type="number" name="n2" disabled />
+          <input type="number" name="n3" disabled />
+          <input type="number" name="n4"disabled />
+          <input type="number" name="n5"disabled />
+          <input type="number" name="n6"disabled />
         </div>
+        <span><%=spanText1%></span>
+        <span> <%=spanText2%> </span>
         <button>Verify OTP</button>
       </form>
     </div>

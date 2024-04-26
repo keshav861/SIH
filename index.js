@@ -4,6 +4,8 @@ import express from "express";
 
 // const http = require('http').createServer(app)
 import http from "http";
+import ejs from "ejs";
+import nodemailer from 'nodemailer';
 import session from "express-session";
 import bodyParser from "body-parser";
 import socketIO from "socket.io";
@@ -15,6 +17,15 @@ const __dirname = dirname(fileURLToPath(
 
 const app = express();
 const port = process.env.PORT || 5500;
+const senderMail = "ecoverse24@gmail.com";
+const password = "qcxs lfxl iyfl witc";
+let clientotp = "";
+let serverotp = "";
+let userEmail = "";
+let userPassword = "";
+let newUser;
+
+app.set('view engine', 'ejs');
 
 mongoose.connect("mongodb://127.0.0.1:27017/legal-easy", { useNewUrlParser: true });
 
@@ -64,15 +75,14 @@ let provider;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 app.use(session({
-  secret: 'your_secret_key',
-  resave: false,
-  saveUninitialized: true
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: true
 }));
 app.use((req, res, next) => {
     res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
     next();
-  });
-
+});
 
 
 
@@ -92,13 +102,15 @@ app.post("/login", async (req, res) => {
             res.sendFile(__dirname + "/pages/login.html");
     } else
         res.sendFile(__dirname + "/pages/signup.html");
-    console.log("login - "+`${person}`);
-    console.log("login - "+`${provider}`);
+    console.log("login - " + `${person}`);
+    console.log("login - " + `${provider}`);
 })
+
 
 app.get('/login', async (req, res) => {
     res.sendFile(__dirname + "/pages/login.html");
 })
+
 
 app.get('/log-out', (req, res) => {
     person = null;
@@ -111,43 +123,100 @@ app.get('/log-out', (req, res) => {
     });
 });
 
+
 app.post("/signup", async (req, res) => {
     const existing = await Person.findOne({ number: req.body["number"] }).exec();
     if (existing) {
         res.send("User Exists");
-    } else {
+    } else if (req.body["password"] == req.body["conf_password"]) {
+        userEmail = req.body.email;
+        userPassword = req.body.password;
+        newUser = req.body;
 
-        Person.create({
-            name: req.body["name"],
-            password: req.body["password"],
-            email: req.body["email"],
-            number: req.body["number"]
-        }).then((data) => { });
-        if (req.body["password"] === req.body["conf_password"]) {
-            res.sendFile(__dirname + "/client_interface/index2.html");
-        }
-        else {
-            res.send("Passwords Don't Match");
-        }
+        clientotp = Math.floor(100000 + Math.random() * 900000);
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: senderMail,
+                pass: password,
+            },
+        });
+
+        const mailOptions = {
+            from: senderMail,
+            to: userEmail,
+            subject: 'OTP for Email Verification',
+            text: `Your OTP code is ${clientotp}.`,
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.render('otp', { spanText1: "", spanText2: "OTP succesfully sent!" });
+    }
+    else {
+        res.send("PASSWORDS DON'T MATCH");
     }
 })
+
+
+app.post("/OTP", async (req, res) => {
+    const userOTP = req.body.n1 + req.body.n2 + req.body.n3 + req.body.n4 + req.body.n5 + req.body.n6;
+    if (userOTP == clientotp) {
+        Person.create({
+            name: newUser["name"],
+            password: newUser["password"],
+            email: newUser["email"],
+            number: newUser["number"]
+        }).then((data) => { });
+        res.sendFile(__dirname + "/client_interface/index2.html");
+    }
+    else if (userOTP == serverotp) {
+        Server.create({
+            name: newUser["name"],
+            password: newUser["password"],
+            email: newUser["email"],
+            number: newUser["number"],
+            brnumber: newUser["brnumber"],
+        }).then((data) => { });
+        res.sendFile(__dirname + "/user_interface/index2.html");
+    }
+    else {
+        res.render('otp', { spanText1: "Incorrect OTP!", spanText2: "" });
+    }
+});
 
 
 app.post("/server-signup", async (req, res) => {
     const existing = await Server.findOne({ number: req.body["number"] }).exec();
     if (existing) {
         res.send("Service Provider Exists");
-    } else {
-        Server.create({
-            name: req.body["name"],
-            password: req.body["password"],
-            email: req.body["email"],
-            number: req.body["number"],
-            brnumber: req.body["brnumber"]
-        }).then((data) => { });
-        if (req.body["password"] == req.body["conf_password"]) {
-            res.sendFile(__dirname + "/user_interface/index2.html");
-        }
+    } else if (req.body["password"] == req.body["conf_password"]) {
+        userEmail = req.body.email;
+        userPassword = req.body.password;
+        newUser = req.body;
+
+        serverotp = Math.floor(100000 + Math.random() * 900000);
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: senderMail,
+                pass: password,
+            },
+        });
+
+        const mailOptions = {
+            from: senderMail,
+            to: userEmail,
+            subject: 'OTP for Email Verification',
+            text: `Your OTP code is ${serverotp}.`,
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.render('otp', { spanText1: "", spanText2: "OTP succesfully sent!" });
+    }
+    else {
+        res.send("PASSWORDS DON'T MATCH");
     }
 })
 
@@ -187,6 +256,5 @@ io.on('connection', (socket) => {
     socket.on('message', (msg) => {
         socket.broadcast.emit('message', msg)
     })
-
 })
 
