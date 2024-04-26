@@ -37,7 +37,7 @@ body {
     font-weight: 400;
     min-height: 100%;
     color: #031e23;
-    background: #ecf0f4
+    background: #ecf0f4;
 }
 
 a {
@@ -1807,7 +1807,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     width: 280px;
     height: 100vh;
     z-index: 1000;
-    background: #0b132b
+    background: #fff;
 }
 
 .left-side-bar .mCS-dark-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
@@ -2063,7 +2063,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 }
 
 .sidebar-light .left-side-bar {
-    background: #fff
+    background: #fff;
 }
 
 .sidebar-light .sidebar-menu .dropdown-toggle,
