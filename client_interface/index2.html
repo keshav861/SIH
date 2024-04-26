@@ -328,9 +328,10 @@
                     </div>
                     <div class="col-md-6 col-sm-12 text-right">
                         <div class="upload-file">
-                            <button class="upload-button">
+                            <button class="upload-button" id="addDocumentBtn">
                                 <i class="fa fa-plus"></i>
                               </button>
+                              <input type="file" id="fileInput" style="display: none;">
                         </div>
                         <style>
                             .upload-file{
@@ -406,19 +407,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-                    <div class="card-box pd-30 height-100-p">
-                        <div class="progress-box text-center">
-                            <button id="addDocumentBtn" class="btn btn-primary">Add Document</button>
-                            <!-- Input for file upload -->
-                            <input type="file" id="fileInput" style="display: none;">
-                        </div>
-                    </div>
+                <div class="title" style="margin-left: 17px; margin-bottom: 20px;">
+                    <h4>Documents</h4>
                 </div>
             </div>
             <div id="documentCardContainer" class="row clearfix">
                 <!-- Newly added document card will be appended here -->
-            </div>
+            </div>  
 
 
             <script>
