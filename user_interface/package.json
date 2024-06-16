@@ -24,7 +24,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^3.0.2",
-    "gulp": "^4.0.0",
+    "gulp": "^5.0.0",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-changed": "^3.1.1",
     "gulp-clean-css": "^3.10.0",
