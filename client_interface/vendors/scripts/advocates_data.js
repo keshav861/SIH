@@ -2,27 +2,32 @@ const advocatesData = {
     kdPathak: {
         name: "K.D. Pathak",
         profession: "Criminal lawyer",
-        details: "legal luminary and one of India's most prominent and influential lawyers. With his sharp intellect, unparalleled courtroom skills, and fearless advocacy, he left an indelible mark on the Indian legal system."
+        details: "legal luminary and one of India's most prominent and influential lawyers. With his sharp intellect, unparalleled courtroom skills, and fearless advocacy, he left an indelible mark on the Indian legal system.",
+        price: "₹ 700"
     },
     mickeyhaller: {
         name: "Mickey Haller",
         profession: "HDFC-Bank",
-        details: "banker with over 20 years of experience in the financial industry. He holds a Bachelor's degree in Economics from a prestigious university and pursued further education in finance, earning an MBA with a focus on banking and finance."
+        details: "banker with over 20 years of experience in the financial industry. He holds a Bachelor's degree in Economics from a prestigious university and pursued further education in finance, earning an MBA with a focus on banking and finance.",
+        price: "₹ 200"
     },
     mukulrohatgi: {
         name: "Mukul Rohatgi",
         profession: "C.A.",
-        details: "experienced Chartered Accountant with a stellar academic background and extensive professional experience in accounting, auditing, taxation, and financial advisory services. She holds a Bachelor's degree in Commerce with a specialization in Accounting and Finance from a renowned university. After completing her undergraduate studies, she pursued the rigorous Chartered Accountancy (CA) program, earning her CA designation from the Institute of Chartered Accountants of India (ICAI)"
+        details: "experienced Chartered Accountant with a stellar academic background and extensive professional experience in accounting, auditing, taxation, and financial advisory services. She holds a Bachelor's degree in Commerce with a specialization in Accounting and Finance from a renowned university. After completing her undergraduate studies, she pursued the rigorous Chartered Accountancy (CA) program, earning her CA designation from the Institute of Chartered Accountants of India (ICAI)",
+        price: "₹ 300"
     },
     ramjethmalani: {
         name: "Ram Jethmalani",
         profession: "Criminal lawyer",
-        details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sint repudiandae nobis necessitatibus sequi beatae excepturi ad minus eum velit libero ab porro quod, temporibus neque! At natus impedit deserunt? Distinctio, architecto eum? Quidem explicabo maxime nisi assumenda aperiam nesciunt nemo aliquam labore, magnam rem porro! Repellat unde quidem sed."
+        details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sint repudiandae nobis necessitatibus sequi beatae excepturi ad minus eum velit libero ab porro quod, temporibus neque! At natus impedit deserunt? Distinctio, architecto eum? Quidem explicabo maxime nisi assumenda aperiam nesciunt nemo aliquam labore, magnam rem porro! Repellat unde quidem sed.",
+        price: "₹ 600"
     },
     ashokdesai: {
         name: "Ashok Desai",
         profession: "Criminal lawyer",
-        details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sint repudiandae nobis necessitatibus sequi beatae excepturi ad minus eum velit libero ab porro quod, temporibus neque! At natus impedit deserunt? Distinctio, architecto eum? Quidem explicabo maxime nisi assumenda aperiam nesciunt nemo aliquam labore, magnam rem porro! Repellat unde quidem sed."
+        details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sint repudiandae nobis necessitatibus sequi beatae excepturi ad minus eum velit libero ab porro quod, temporibus neque! At natus impedit deserunt? Distinctio, architecto eum? Quidem explicabo maxime nisi assumenda aperiam nesciunt nemo aliquam labore, magnam rem porro! Repellat unde quidem sed.",
+        price: "₹ 400"
     }
     
 };
@@ -39,6 +44,7 @@ function showPopup(event) {
         document.getElementById("name").textContent = data.name;
         document.getElementById("profession").textContent = data.profession;
         document.getElementById("details").textContent = data.details;
+        document.getElementById("price").textContent = data.price;
 
         const popup = document.getElementById("popup");
         const overlay = document.getElementById("popupOverlay");
