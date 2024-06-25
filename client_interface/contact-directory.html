@@ -4,7 +4,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title></title>
+	<title>Consultancy</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/client_interface/vendors/images/apple-touch-icon.png">
@@ -26,25 +26,48 @@
 	<link rel="stylesheet" type="text/css" href="/client_interface/vendors/styles/style.css">
 	<link rel="stylesheet" href="/client_interface/vendors/styles/data_css.css">
 
+	<style>
+		.filter {
+			display: flex;
+			position: absolute;
+			font-size: 1.5rem;
+			height: 100px;
+			width: 100px;
+			top: 15px;
+			right: 0;
+			cursor: pointer;
+		}
 
+		@media (max-width: 768px) {
+			.filter {
+				height: 50px;
+				width: 50px;
+			}
+		}
+
+		.filter-container {
+			display: none;
+			position: relative;
+			background-color: white;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			margin-top: 10px;
+		}
+
+		.filter-section {
+			margin-bottom: 20px;
+		}
+
+		.filter-section h5 {
+			margin-bottom: 10px;
+		}
+	</style>
 </head>
 
 <body>
-	<!-- <div class="pre-loader">
-		<div class="pre-loader-box">
-			<div class="loader-logo"><img src="vendors/images/deskapp-logo.svg" alt=""></div>
-			<div class='loader-progress' id="progress_div">
-				<div class='bar' id='bar1'></div>
-			</div>
-			<div class='percent' id='percent1'>0%</div>
-			<div class="loading-text">
-				Loading...
-			</div>
-		</div>
-	</div> -->
 	<cli-navbar></cli-navbar>
 	<div class="mobile-menu-overlay"></div>
-
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
 			<div class="min-height-200px">
@@ -55,28 +78,7 @@
 								<div class="title">
 									<h4>Consultancy</h4>
 								</div>
-								<a href=""><div class="filter"><i class='bx bx-filter'></i></a>
-									<style>
-										.filter {
-											display: flex;
-											position: absolute;
-											font-size: 1.5rem;
-											height: 100px;
-											width: 100px;
-											top: 15px;
-											right: 0;
-											cursor: pointer;
-
-										}
-										@media (max-width: 768px){
-											.filter{
-												height: 50px;
-												width: 50px;
-											}
-										}
-									</style>
-								</div>
-
+								<div class="filter" id="filterIcon"><i class='bx bx-filter'></i></div>
 								<nav aria-label="breadcrumb" role="navigation">
 									<ol class="breadcrumb">
 										<li class="breadcrumb-item"><a href="/client_interface/index2.html">Home</a>
@@ -87,9 +89,67 @@
 							</div>
 						</div>
 					</div>
-					<div class="contact-directory-list">
-						<ul class="row">
 
+					<div class="contact-directory-list filter-container" id="filterContainer">
+						<div class="pd-ltr-20 xs-pd-20-10">
+							<div class="min-height-200px">
+								<div class="container pd-0">
+									<div class="page-header">
+										<div class="row">
+											<div class="col-md-12 col-sm-12">
+												<div class="filter-section">
+													<h5>Location</h5>
+													<label for="autoLocation">Auto Location</label>
+													<input type="checkbox" id="autoLocation" name="autoLocation">
+													<div id="manualLocation">
+														<label for="location">Select Location:</label>
+														<select id="location" name="location">
+															<option value="Solan">Solan</option>
+															<option value="Delhi">Delhi</option>
+															<option value="Mumbai">Mumbai</option>
+														</select>
+													</div>
+												</div>
+												<div class="filter-section">
+													<h5>Profession</h5>
+													<label for="profession">Profession:</label>
+													<select id="profession" name="profession">
+														<option value="Criminal lawyer">Criminal lawyer</option>
+														<option value="HDFC-Bank">HDFC-Bank</option>
+														<option value="C.A.">C.A.</option>
+													</select>
+												</div>
+												<div class="filter-section">
+													<h5>Price Range</h5>
+													<label for="minPrice">Min Price:</label>
+													<input type="number" id="minPrice" name="minPrice">
+													<label for="maxPrice">Max Price:</label>
+													<input type="number" id="maxPrice" name="maxPrice">
+												</div>
+												<div class="filter-section">
+													<h5>Rating</h5>
+													<label for="rating">Minimum Rating:</label>
+													<select id="rating" name="rating">
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+													</select>
+												</div>
+												<button id="applyFilter">Apply Filter</button>
+												<button id="resetFilter">Reset Filter</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="contact-directory-list">
+						<ul class="row" id="advocatesList">
+							<!-- List of advocates will go here -->
 							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
 								<div class="contact-directory-box">
 									<div class="contact-dire-info text-center">
@@ -106,7 +166,7 @@
 											<span class="badge badge-pill">District Court</span>
 										</div>
 										<div class="profile-sort-desc">
-											lawyer with 10 years of experience in the field of criminal law.
+											Lawyer with 10 years of experience in the field of criminal law.
 										</div>
 									</div>
 									<div class="view-contact">
@@ -115,17 +175,14 @@
 										<div class="popup" id="popup">
 											<i id="closePopup" class="bx bx-x close-icon"></i>
 											<h2><span id="name"></span></h2>
-											<p><b>Profession:</b> <span id="profession"></span></p>
+											<p><b>Profession:</b> <span id="professionPopup"></span></p>
 											<p><b>Details:</b> <span id="details"></span></p>
 											<p><b>Price(per hour):</b> <span id="price"></span></p>
 											<button id="bookingButton">Book Now</button>
 										</div>
-										<!-- <link rel="stylesheet" href="/client_interface/vendors/styles/data_css.css"> -->
-										<!-- <script src="/client_interface/vendors/scripts/advocates_data.js"></script> -->
 									</div>
 								</div>
 							</li>
-
 							<li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
 								<div class="contact-directory-box">
 									<div class="contact-dire-info text-center">
@@ -197,11 +254,23 @@
 									</div>
 								</div>
 							</li>
-							
+							<!-- Add more advocate items here -->
 						</ul>
 					</div>
 				</div>
 			</div>
+			<style>
+				.profile-sort-desc {
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 4;
+					/* Limit to 4 lines */
+					overflow: hidden;
+					text-overflow: ellipsis;
+					align-items: center;
+					justify-content: center;
+				}
+			</style>
 			<div class="footer-wrap pd-20 mb-20 card-box">
 				<!-- COPYRIGHTS @Ministry of law -->
 			</div>
