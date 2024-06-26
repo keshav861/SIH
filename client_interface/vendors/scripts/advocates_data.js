@@ -96,7 +96,19 @@ document.getElementById("filterIcon").addEventListener("click", showFilterContai
 document.getElementById("applyFilter").addEventListener("click", function () {
     applyFilters();
 });
-document.getElementById("resetFilter").addEventListener("click", resetFilter);
+document.getElementById('resetFilter').addEventListener('click', function () {
+    document.querySelectorAll('.tab-content input, .tab-content select').forEach(input => {
+        if (input.type === 'checkbox') {
+            input.checked = false;
+        } else {
+            input.value = '';
+        }
+    });
+    document.querySelector('.tab-link.current').classList.remove('current');
+    document.querySelector('.tab-content.current').classList.remove('current');
+    document.querySelector('.tab-link[data-tab="tab-1"]').classList.add('current');
+    document.getElementById('tab-1').classList.add('current');
+});
 document.getElementById("autoLocation").addEventListener("change", function () {
     if (this.checked) {
         getLocation();
@@ -104,14 +116,6 @@ document.getElementById("autoLocation").addEventListener("change", function () {
         document.getElementById("manualLocation").style.display = "block";
     }
 });
-function resetFilter() {
-    document.getElementById("location").value = '';
-    document.getElementById("profession").value = '';
-    document.getElementById("priceRange").value = 1000;
-    document.getElementById("rating").value = '1';
-
-    displayFilteredData(Object.values(advocatesData));
-}
 
 
 function getLocation() {
@@ -191,3 +195,80 @@ document.getElementById("bookingButton").addEventListener("click", function () {
     alert("Booking button clicked!");
     hidePopup();
 });
+document.addEventListener('DOMContentLoaded', function () {
+    // Show the filter container with animation
+    const filterContainer = document.getElementById('filterContainer');
+    filterContainer.classList.add('show');
+
+    // Tab functionality
+    const tabs = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            const tabId = this.getAttribute('data-tab');
+
+            tabs.forEach(t => t.classList.remove('current'));
+            tabContents.forEach(tc => tc.classList.remove('current'));
+
+            this.classList.add('current');
+            document.getElementById(tabId).classList.add('current');
+        });
+    });
+});
+
+
+function toggleSidebar() {
+    const filterContainer = document.getElementById("filterContainer");
+    const backdrop = document.querySelector(".backdrop");
+
+    // Toggle sidebar visibility
+    if (!filterContainer.classList.contains("open")) {
+        filterContainer.classList.add("open");
+        backdrop.classList.add("show");
+    } else {
+        filterContainer.classList.remove("open");
+        backdrop.classList.remove("show");
+    }
+}
+
+// Close sidebar and backdrop when clicked outside sidebar (for mobile view)
+function closeSidebar(event) {
+    const filterContainer = document.getElementById("filterContainer");
+    const backdrop = document.querySelector(".backdrop");
+
+    if (!filterContainer.contains(event.target) && !event.target.classList.contains("filter")) {
+        filterContainer.classList.remove("open");
+        backdrop.classList.remove("show");
+    }
+}
+
+// Apply filter button functionality (you can add your logic here)
+document.getElementById('applyFilter').addEventListener('click', function () {
+    // Apply filter logic here
+
+    // Close sidebar after applying filter (if needed)
+    document.getElementById("filterContainer").classList.remove("open");
+    document.querySelector(".backdrop").classList.remove("show");
+});
+
+// Reset filter button functionality (you can add your logic here)
+document.getElementById('resetFilter').addEventListener('click', function () {
+    // Reset filter logic here
+
+    // Close sidebar after resetting filter (if needed)
+    document.getElementById("filterContainer").classList.remove("open");
+    document.querySelector(".backdrop").classList.remove("show");
+});
+if (window.matchMedia("(max-width: 768px)").matches) {
+    // Event listener to toggle sidebar on filter icon click
+    document.getElementById("filterIcon").addEventListener("click", toggleSidebar);
+
+    // Event listener to close sidebar and backdrop on outside click
+    document.addEventListener("click", closeSidebar);
+
+    // Event listener to prevent closing when clicking inside the sidebar
+    document.getElementById("filterContainer").addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevents the event from propagating to document click handler
+    });
+}
