@@ -103,6 +103,7 @@ document.getElementById('resetFilter').addEventListener('click', function () {
         } else {
             input.value = '';
         }
+        applyFilters();
     });
     document.querySelector('.tab-link.current').classList.remove('current');
     document.querySelector('.tab-content.current').classList.remove('current');
